@@ -1,21 +1,33 @@
-﻿namespace ServerSideApp.Services
-{
-    public class Employee
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
-    }
+﻿using ServerSideApp.Data;
+using ServerSideApp.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
+namespace ServerSideApp.Services
+{
     public class EmployeeRepository
     {
+        readonly IScopedDbContextProvider<EmployeeDbContext> scopedDbContextProvider;
+
         public EmployeeRepository()
         {
-
+            // We use this parameterless constructor in the Data Source Wizard only, and not for the actual instantiation of the repository object.
+            throw new NotSupportedException();
         }
 
-        public Employee GetEmployee()
+        public EmployeeRepository(IScopedDbContextProvider<EmployeeDbContext> scopedDbContextProvider)
         {
-            return new Employee { Id = 1, Name = "Prasad" };
+            this.scopedDbContextProvider = scopedDbContextProvider ?? throw new ArgumentNullException(nameof(scopedDbContextProvider));
+        }
+
+        public IList<Employee> GetEmployees()
+        {
+            using (var dbContextScope = scopedDbContextProvider.GetDbContextScope())
+            {
+                var dbContext = dbContextScope.DbContext;
+                return dbContext.Employees.ToList();
+            }
         }
     }
 }
