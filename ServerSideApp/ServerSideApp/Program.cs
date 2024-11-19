@@ -17,10 +17,11 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using ServerSideApp.Services;
 using ServerSideApp.Data;
+using DevExpress.XtraCharts;
+using DevExpress.Utils;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDevExpressControls();
-builder.Services.AddScoped<ReportStorageWebExtension, CustomReportStorageWebExtension>();
 builder.Services.AddMvc();
 builder.Services.ConfigureReportingServices(configurator => {
     if(builder.Environment.IsDevelopment()) {
@@ -33,6 +34,14 @@ builder.Services.ConfigureReportingServices(configurator => {
         viewerConfigurator.RegisterConnectionProviderFactory<CustomSqlDataConnectionProviderFactory>();
     });
 });
+
+ServiceRegistrator.AddCommonServices(builder.Services);
+
+builder.Services.AddScoped<ReportStorageWebExtension, CustomReportStorageWebExtension>();
+builder.Services.AddSingleton<IScopedDbContextProvider<ReportDbContext>, ScopedDbContextProvider<ReportDbContext>>();
+builder.Services.AddTransient<EmployeeRepository>();
+DeserializationSettings.RegisterTrustedClass(typeof(EmployeeRepository));
+
 builder.Services.AddDbContext<ReportDbContext>(options => options.UseSqlite(builder.Configuration.GetConnectionString("ReportsDataConnectionString")));
 
 builder.Services.AddCors(options => {
