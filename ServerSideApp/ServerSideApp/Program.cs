@@ -22,7 +22,7 @@ using DevExpress.Utils;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDevExpressControls();
-builder.Services.AddMvc();
+builder.Services.AddControllers();
 builder.Services.ConfigureReportingServices(configurator => {
     if(builder.Environment.IsDevelopment()) {
         configurator.UseDevelopmentMode();
@@ -56,6 +56,10 @@ builder.Services.AddCors(options => {
     });
 });
 
+// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
 var app = builder.Build();
 
 DatabaseInitilaizer.Seed(app);
@@ -68,20 +72,15 @@ AccessSettings.ReportingSpecificResources.TrySetRules(contentDirectoryAllowRule,
 app.UseDevExpressControls();
 System.Net.ServicePointManager.SecurityProtocol |= System.Net.SecurityProtocolType.Tls12;
 if(app.Environment.IsDevelopment()) {
-    app.UseDeveloperExceptionPage();
-} else {
-    app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    app.UseHsts();
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
-app.UseHttpsRedirection();
-app.UseStaticFiles();
-app.UseRouting();
 
+app.UseHttpsRedirection();
 app.UseCors("AllowCorsPolicy");
 
 app.UseAuthorization();
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+
+app.MapControllers();
+
 app.Run();
