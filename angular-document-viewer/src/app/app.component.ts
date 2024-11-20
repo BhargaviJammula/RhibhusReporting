@@ -29,9 +29,6 @@ export class AppComponent {
   selectedCity: string = "";
   reportUrl: string = 'EmployeeParamReport';
   hostUrl: string = environment.baseUrl;
-  // Use this line if you use an ASP.NET MVC backend
-  //invokeAction: string = "/WebDocumentViewer/Invoke";
-  // Use this line if you use an ASP.NET Core backend
   invokeAction: string = '/DXXRDV';
 
   submitParameter() {
