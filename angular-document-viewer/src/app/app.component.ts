@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { DxReportViewerModule } from 'devexpress-reporting-angular';
 import { FormsModule } from '@angular/forms';
-
+import { environment } from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -28,7 +28,7 @@ export class AppComponent {
   title = 'DXReportViewerSample';
   selectedCity: string = "";
   reportUrl: string = 'EmployeeParamReport';
-  hostUrl: string = 'http://localhost:5000/';
+  hostUrl: string = environment.baseUrl;
   // Use this line if you use an ASP.NET MVC backend
   //invokeAction: string = "/WebDocumentViewer/Invoke";
   // Use this line if you use an ASP.NET Core backend
