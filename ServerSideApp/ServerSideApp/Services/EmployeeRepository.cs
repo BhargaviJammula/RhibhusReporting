@@ -1,8 +1,5 @@
 ﻿using ServerSideApp.Data;
 using ServerSideApp.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace ServerSideApp.Services
 {
@@ -27,6 +24,15 @@ namespace ServerSideApp.Services
             {
                 var dbContext = dbContextScope.DbContext;
                 return dbContext.Employees.ToList();
+            }
+        }
+
+        public IList<Employee> GetEmployees(string cityName)
+        {
+            using (var dbContextScope = scopedDbContextProvider.GetDbContextScope())
+            {
+                var dbContext = dbContextScope.DbContext;
+                return dbContext.Employees.Where(e => e.City.ToLower() == cityName.ToLower()).ToList();
             }
         }
     }

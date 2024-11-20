@@ -23,7 +23,7 @@ import { DxReportViewerModule } from 'devexpress-reporting-angular';
 })
 export class AppComponent {
 	title = 'DXReportViewerSample';
-	reportUrl: string = 'EmployeeReport';
+	reportUrl: string = 'EmployeeParamReport?cityNameParam=Mysore';
 	hostUrl: string = 'http://localhost:5000/';
 	// Use this line if you use an ASP.NET MVC backend
 	//invokeAction: string = "/WebDocumentViewer/Invoke";

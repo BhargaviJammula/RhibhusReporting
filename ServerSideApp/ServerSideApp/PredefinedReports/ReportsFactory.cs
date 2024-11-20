@@ -11,7 +11,8 @@ namespace ServerSideApp.PredefinedReports
         public static Dictionary<string, Func<XtraReport>> Reports = new Dictionary<string, Func<XtraReport>>()
         {
             ["TestReport"] = () => new TestReport(),
-            ["EmployeeReport"] = () => new EmployeeReport()
+            ["EmployeeReport"] = () => new EmployeeReport(),
+            ["EmployeeParamReport"] = () => new EmployeeParamReport()
         };
     }
 }
