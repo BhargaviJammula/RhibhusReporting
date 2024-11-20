@@ -32,7 +32,16 @@ namespace ServerSideApp.Services
             using (var dbContextScope = scopedDbContextProvider.GetDbContextScope())
             {
                 var dbContext = dbContextScope.DbContext;
-                return dbContext.Employees.Where(e => e.City.ToLower() == cityName.ToLower()).ToList();
+
+                // If cityName is null or empty, return all employees
+                var query = dbContext.Employees.AsQueryable();
+
+                if (!string.IsNullOrWhiteSpace(cityName))
+                {
+                    query = query.Where(e => e.City.ToLower() == cityName.ToLower());
+                }
+
+                return query.ToList();
             }
         }
     }
