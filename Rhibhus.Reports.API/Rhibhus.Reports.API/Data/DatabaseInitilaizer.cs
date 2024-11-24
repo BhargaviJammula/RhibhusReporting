@@ -27,7 +27,7 @@ namespace Rhibhus.Reports.API.Data
                     var faker = new Faker<Employee>()
                         .RuleFor(e => e.Name, f => f.Name.FullName())
                         .RuleFor(e => e.Email, (f, e) => f.Internet.Email(e.Name))
-                        .RuleFor(e => e.Age, f => f.Random.Int(30, 35)) // All employees have similar age (between 25 and 35)
+                        .RuleFor(e => e.Age, f => f.Random.Int(30, 35)) // All employees have similar age (between 30 and 35)
                         .RuleFor(e => e.City, f => f.PickRandom(cities)); // Randomly pick a city from the list
 
                     var employeeToAdd = faker.Generate(100);

@@ -1,6 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
 import { DxReportViewerModule } from 'devexpress-reporting-angular';
 import { FormsModule } from '@angular/forms';
 import { environment } from '../environments/environment';
@@ -11,7 +10,6 @@ import { environment } from '../environments/environment';
   standalone: true,
   imports: [
     CommonModule,
-    RouterOutlet,
     FormsModule,
     DxReportViewerModule
   ],
