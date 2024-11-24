@@ -306,6 +306,8 @@ __pycache__/
 *.btm.cs
 *.odx.cs
 *.xsd.cs
-/ServerSideApp/ServerSideApp/ViewerStorages/Documents
-/ServerSideApp/ServerSideApp/ViewerStorages/ExportedDocuments
-/ServerSideApp/ServerSideApp/ViewerStorages/Reports
+**/ViewerStorages/Documents
+**/ViewerStorages/ExportedDocuments
+**/ViewerStorages/Reports
+*.repx
+*.prnx
