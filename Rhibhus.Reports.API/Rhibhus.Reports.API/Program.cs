@@ -35,7 +35,7 @@ builder.Services.ConfigureReportingServices(configurator => {
     });
 });
 
-ServiceRegistrator.AddCommonServices(builder.Services);
+ServiceRegistrator.AddCommonServices(builder.Services, builder.Environment.ContentRootPath);
 
 builder.Services.AddScoped<ReportStorageWebExtension, CustomReportStorageWebExtension>();
 builder.Services.AddSingleton<IScopedDbContextProvider<ReportDbContext>, ScopedDbContextProvider<ReportDbContext>>();

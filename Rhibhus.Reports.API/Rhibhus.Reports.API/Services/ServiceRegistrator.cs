@@ -15,7 +15,7 @@ namespace Rhibhus.Reports.API.Services
 {
     public class ServiceRegistrator
     {
-        public static IServiceCollection AddCommonServices(IServiceCollection services, string contentRootPath = "C:\\code\\Columbia Asia\\pocs\\DevExpressReporting\\Rhibhus.Reports.API\\Rhibhus.Reports.API")
+        public static IServiceCollection AddCommonServices(IServiceCollection services, string contentRootPath)
         {
             var cacheCleanerSettings = new CacheCleanerSettings(TimeSpan.FromMinutes(1), TimeSpan.FromSeconds(30), TimeSpan.FromMinutes(2), TimeSpan.FromMinutes(2));
             services.AddSingleton<CacheCleanerSettings>(cacheCleanerSettings);
