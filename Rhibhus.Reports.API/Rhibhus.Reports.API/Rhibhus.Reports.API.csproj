@@ -27,5 +27,8 @@
 		<Content Remove="ViewerStorages\**" />
 		<EmbeddedResource Remove="ViewerStorages\**" />
 	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="wwwroot\reports\" />
+	</ItemGroup>
 
 </Project>

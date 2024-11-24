@@ -19,6 +19,7 @@ using Rhibhus.Reports.API.Services;
 using Rhibhus.Reports.API.Data;
 using DevExpress.XtraCharts;
 using DevExpress.Utils;
+using Rhibhus.Reports.API.Services.Download;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDevExpressControls();
@@ -35,9 +36,10 @@ builder.Services.ConfigureReportingServices(configurator => {
     });
 });
 
-ServiceRegistrator.AddCommonServices(builder.Services);
+ServiceRegistrator.AddCommonServices(builder.Services, builder.Environment.ContentRootPath);
 
 builder.Services.AddScoped<ReportStorageWebExtension, CustomReportStorageWebExtension>();
+builder.Services.AddScoped<IReportService, ReportService>();
 builder.Services.AddSingleton<IScopedDbContextProvider<ReportDbContext>, ScopedDbContextProvider<ReportDbContext>>();
 builder.Services.AddSingleton<IScopedDbContextProvider<EmployeeDbContext>, ScopedDbContextProvider<EmployeeDbContext>>();
 builder.Services.AddTransient<EmployeeRepository>();
@@ -75,6 +77,7 @@ if(app.Environment.IsDevelopment()) {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.UseStaticFiles();
 
 app.UseHttpsRedirection();
 app.UseCors("AllowCorsPolicy");
