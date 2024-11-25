@@ -27,7 +27,7 @@ export class AppComponent {
   selectedCity: string = "";
   reportUrl: string = 'EmployeeParamReport';
   hostUrl: string = environment.baseUrl;
-  invokeAction: string = '/DXXRDV';
+  invokeAction: string = environment.routePath;
 
   submitParameter() {
     this.reportUrl = 'EmployeeParamReport?cityNameParam=' + this.selectedCity;
