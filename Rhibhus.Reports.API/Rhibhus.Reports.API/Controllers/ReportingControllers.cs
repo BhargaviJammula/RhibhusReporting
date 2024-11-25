@@ -6,19 +6,13 @@ namespace Rhibhus.Reports.API.Controllers
 {
     [ApiExplorerSettings(IgnoreApi = true)]
     [Route("Admin")]
-    public class AdminWebDocumentViewerController : WebDocumentViewerController
+    public class AdminWebDocumentViewerController(IWebDocumentViewerMvcControllerService controllerService) : WebDocumentViewerController(controllerService)
     {
-        public AdminWebDocumentViewerController(IWebDocumentViewerMvcControllerService controllerService) : base(controllerService)
-        {
-        }
     }
 
     [ApiExplorerSettings(IgnoreApi = true)]
     [Route("User")]
-    public class UserWebDocumentViewerController : WebDocumentViewerController
+    public class UserWebDocumentViewerController(IWebDocumentViewerMvcControllerService controllerService) : WebDocumentViewerController(controllerService)
     {
-        public UserWebDocumentViewerController(IWebDocumentViewerMvcControllerService controllerService) : base(controllerService)
-        {
-        }
     }
 }
