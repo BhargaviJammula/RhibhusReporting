@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { DxReportViewerModule } from 'devexpress-reporting-angular';
 import { FormsModule } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
+import { NavbarComponent } from '../app/navbar/navbar.component';
 
 @Component({
   selector: 'app-root',
@@ -12,9 +13,11 @@ import { RouterOutlet } from '@angular/router';
     CommonModule,
     FormsModule,
     DxReportViewerModule,
-    RouterOutlet
+    RouterOutlet,
+    NavbarComponent
   ],
-  template: `<router-outlet></router-outlet>`
+  template: `<app-navbar></app-navbar>
+    <router-outlet></router-outlet>`
 })
 
 export class AppComponent {
