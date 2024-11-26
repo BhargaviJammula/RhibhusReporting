@@ -63,6 +63,7 @@ namespace Rhibhus.Reports.API.Services
             {
                 "EmployeeParamReport" => new EmployeeParamReport(),
                 "EmployeeReport" => new EmployeeReport(),
+                "SimpleFeedChartReport" => new SimpleFeedChartReport(),
                 _ => throw new DevExpress.XtraReports.Web.ClientControls.FaultException(string.Format("Could not find report '{0}'.", reportName)),
             };
 

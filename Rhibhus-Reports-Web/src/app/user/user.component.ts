@@ -24,7 +24,7 @@ import { environment } from '../../environments/environment';
 export class UserComponent {
   title = 'DXReportViewerSample';
   selectedCity: string = "";
-  reportUrl: string = 'EmployeeReport';
+  reportUrl: string = 'SimpleFeedChartReport';
   hostUrl: string = environment.baseUrl;
   invokeAction: string = environment.userRoutePath;
 }
