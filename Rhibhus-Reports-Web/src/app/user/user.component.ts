@@ -22,14 +22,9 @@ import { environment } from '../../environments/environment';
   ]
 })
 export class UserComponent {
-  cityNames: string[] = ["Bangalore", "Mandya", "Horanadu", "Sringeri", "Mysore"];
   title = 'DXReportViewerSample';
   selectedCity: string = "";
-  reportUrl: string = 'EmployeeParamReport';
+  reportUrl: string = 'EmployeeReport';
   hostUrl: string = environment.baseUrl;
   invokeAction: string = environment.userRoutePath;
-
-  submitParameter() {
-    this.reportUrl = 'EmployeeParamReport?cityNameParam=' + this.selectedCity;
-  }
 }

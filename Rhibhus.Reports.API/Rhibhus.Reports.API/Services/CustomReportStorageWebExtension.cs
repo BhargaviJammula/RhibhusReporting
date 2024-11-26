@@ -59,16 +59,12 @@ namespace Rhibhus.Reports.API.Services
             string parametersQueryString = parts.Length > 1 ? parts[1] : String.Empty;
 
             // Create a report instance.
-            XtraReport report = null;
-
-            if (reportName == "EmployeeParamReport")
+            XtraReport report = reportName switch
             {
-                report = new EmployeeParamReport();
-            }
-            else
-            {
-                throw new DevExpress.XtraReports.Web.ClientControls.FaultException(string.Format("Could not find report '{0}'.", reportName));
-            }
+                "EmployeeParamReport" => new EmployeeParamReport(),
+                "EmployeeReport" => new EmployeeReport(),
+                _ => throw new DevExpress.XtraReports.Web.ClientControls.FaultException(string.Format("Could not find report '{0}'.", reportName)),
+            };
 
             // Apply the parameter values to the report.
             var parameters = HttpUtility.ParseQueryString(parametersQueryString);
