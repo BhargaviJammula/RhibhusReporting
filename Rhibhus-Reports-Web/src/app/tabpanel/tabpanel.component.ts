@@ -46,7 +46,7 @@ export class TabpanelComponent {
 
     // Add a new tab dynamically
     this.reportTabs = [...this.reportTabs, {  // Create a new array reference to trigger change detection
-      title: `Report - ${this.selectedCity}`,
+      title: `City - ${this.selectedCity}`,
       reportUrl: newReportUrl,
     }];
 
