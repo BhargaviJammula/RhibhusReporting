@@ -1,0 +1,29 @@
+<p>Admin Report</p>
+<br>
+<div class="dropdown">
+    Please Select City:
+    <select [(ngModel)]="selectedCity">
+        <option *ngFor="let city of cityNames" [value]="city">{{ city }}</option>
+    </select> &nbsp;&nbsp;
+    <button (click)="submitParameter()"><span>Submit</span></button>
+</div>
+<br>
+
+<!-- Tab Panel for Multiple Reports -->
+<dx-tab-panel [selectedIndex]="selectedIndex" [(selectedItem)]="selectedTab" [itemTitleTemplate]="'tabTitleTemplate'">
+
+    <dxi-item *ngFor="let tab of reportTabs; let i = index" [title]="tab.title">
+        <dx-report-viewer [reportUrl]="tab.reportUrl" height="800px">
+            <dxrv-request-options [invokeAction]="invokeAction" [host]="hostUrl"></dxrv-request-options>
+        </dx-report-viewer>
+    </dxi-item>
+
+    <!-- Custom template for tab titles with close button -->
+    <div *dxTemplate="let itemData of 'tabTitleTemplate'; let itemIndex = index">
+        <span>{{ itemData.title }}</span>
+        <button (click)="closeTab(itemIndex); $event.stopPropagation()"
+            style="border: none; background: none; cursor: pointer; color: red; margin-left: 8px;">
+            ❌
+        </button>
+    </div>
+</dx-tab-panel>
