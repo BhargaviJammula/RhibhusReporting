@@ -1,10 +1,18 @@
 <p>Admin Report</p>
 <br>
 <div class="dropdown">
-    Please Select City: 
+    City:
     <select [(ngModel)]="selectedCity">
         <option *ngFor="let city of cityNames" [value]="city">{{ city }}</option>
-    </select> &nbsp;&nbsp;
+    </select>
+
+    &nbsp;&nbsp;
+    Language:
+    <select [(ngModel)]="selectedCountry">
+        <option *ngFor="let country of countryNames" [value]="country">{{ country }}</option>
+    </select>
+
+    &nbsp;&nbsp;
     <button (click)="submitParameter()"><span>Submit</span></button>
 </div>
 <br>

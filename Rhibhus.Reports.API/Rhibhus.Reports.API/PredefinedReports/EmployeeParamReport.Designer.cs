@@ -45,13 +45,14 @@
             this.PageHeader = new DevExpress.XtraReports.UI.PageHeaderBand();
             this.xrTable1 = new DevExpress.XtraReports.UI.XRTable();
             this.xrTableRow1 = new DevExpress.XtraReports.UI.XRTableRow();
-            this.xrTableCell1 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrTableCell2 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrTableCell3 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrTableCell4 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrTableCell5 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrId = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrName = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrEmail = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrAge = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrCity = new DevExpress.XtraReports.UI.XRTableCell();
             this.odsGetEmployees = new DevExpress.DataAccess.ObjectBinding.ObjectDataSource(this.components);
             this.cityNameParam = new DevExpress.XtraReports.Parameters.Parameter();
+            this.countryNameParam = new DevExpress.XtraReports.Parameters.Parameter();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.odsGetEmployees)).BeginInit();
@@ -200,48 +201,48 @@
             // xrTableRow1
             // 
             this.xrTableRow1.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
-            this.xrTableCell1,
-            this.xrTableCell2,
-            this.xrTableCell3,
-            this.xrTableCell4,
-            this.xrTableCell5});
+            this.xrId,
+            this.xrName,
+            this.xrEmail,
+            this.xrAge,
+            this.xrCity});
             this.xrTableRow1.Name = "xrTableRow1";
             this.xrTableRow1.Weight = 1D;
             // 
-            // xrTableCell1
+            // xrId
             // 
-            this.xrTableCell1.Multiline = true;
-            this.xrTableCell1.Name = "xrTableCell1";
-            this.xrTableCell1.Text = "Id";
-            this.xrTableCell1.Weight = 0.38301285963792064D;
+            this.xrId.Multiline = true;
+            this.xrId.Name = "xrId";
+            this.xrId.Text = "Id";
+            this.xrId.Weight = 0.38301285963792064D;
             // 
-            // xrTableCell2
+            // xrName
             // 
-            this.xrTableCell2.Multiline = true;
-            this.xrTableCell2.Name = "xrTableCell2";
-            this.xrTableCell2.Text = "Name";
-            this.xrTableCell2.Weight = 1.3044870229867789D;
+            this.xrName.Multiline = true;
+            this.xrName.Name = "xrName";
+            this.xrName.Text = "Name";
+            this.xrName.Weight = 1.3044870229867789D;
             // 
-            // xrTableCell3
+            // xrEmail
             // 
-            this.xrTableCell3.Multiline = true;
-            this.xrTableCell3.Name = "xrTableCell3";
-            this.xrTableCell3.Text = "Email";
-            this.xrTableCell3.Weight = 2.145833294208233D;
+            this.xrEmail.Multiline = true;
+            this.xrEmail.Name = "xrEmail";
+            this.xrEmail.Text = "Email";
+            this.xrEmail.Weight = 2.145833294208233D;
             // 
-            // xrTableCell4
+            // xrAge
             // 
-            this.xrTableCell4.Multiline = true;
-            this.xrTableCell4.Name = "xrTableCell4";
-            this.xrTableCell4.Text = "Age";
-            this.xrTableCell4.Weight = 0.34294903094951928D;
+            this.xrAge.Multiline = true;
+            this.xrAge.Name = "xrAge";
+            this.xrAge.Text = "Age";
+            this.xrAge.Weight = 0.34294903094951928D;
             // 
-            // xrTableCell5
+            // xrCity
             // 
-            this.xrTableCell5.Multiline = true;
-            this.xrTableCell5.Name = "xrTableCell5";
-            this.xrTableCell5.Text = "City";
-            this.xrTableCell5.Weight = 0.823717792217548D;
+            this.xrCity.Multiline = true;
+            this.xrCity.Name = "xrCity";
+            this.xrCity.Text = "City";
+            this.xrCity.Weight = 0.823717792217548D;
             // 
             // odsGetEmployees
             // 
@@ -258,6 +259,12 @@
             // 
             this.cityNameParam.Name = "cityNameParam";
             // 
+            // countryNameParam
+            // 
+            this.countryNameParam.Description = "Country";
+            this.countryNameParam.Name = "countryNameParam";
+            this.countryNameParam.ValueInfo = "USA";
+            // 
             // EmployeeParamReport
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -270,9 +277,14 @@
             this.odsGetEmployees});
             this.DataSource = this.odsGetEmployees;
             this.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F);
+            this.ParameterPanelLayoutItems.AddRange(new DevExpress.XtraReports.Parameters.ParameterPanelLayoutItem[] {
+            new DevExpress.XtraReports.Parameters.ParameterLayoutItem(this.cityNameParam, DevExpress.XtraReports.Parameters.Orientation.Horizontal),
+            new DevExpress.XtraReports.Parameters.ParameterLayoutItem(this.countryNameParam, DevExpress.XtraReports.Parameters.Orientation.Horizontal)});
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
-            this.cityNameParam});
-            this.Version = "24.1";
+            this.cityNameParam,
+            this.countryNameParam});
+            this.Version = "24.2";
+            this.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.EmployeeParamReport_BeforePrint);
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.odsGetEmployees)).EndInit();
@@ -297,12 +309,13 @@
         private DevExpress.XtraReports.UI.PageHeaderBand PageHeader;
         private DevExpress.XtraReports.UI.XRTable xrTable1;
         private DevExpress.XtraReports.UI.XRTableRow xrTableRow1;
-        private DevExpress.XtraReports.UI.XRTableCell xrTableCell1;
-        private DevExpress.XtraReports.UI.XRTableCell xrTableCell2;
-        private DevExpress.XtraReports.UI.XRTableCell xrTableCell3;
-        private DevExpress.XtraReports.UI.XRTableCell xrTableCell4;
-        private DevExpress.XtraReports.UI.XRTableCell xrTableCell5;
+        private DevExpress.XtraReports.UI.XRTableCell xrId;
+        private DevExpress.XtraReports.UI.XRTableCell xrName;
+        private DevExpress.XtraReports.UI.XRTableCell xrEmail;
+        private DevExpress.XtraReports.UI.XRTableCell xrAge;
+        private DevExpress.XtraReports.UI.XRTableCell xrCity;
         private DevExpress.DataAccess.ObjectBinding.ObjectDataSource odsGetEmployees;
         private DevExpress.XtraReports.Parameters.Parameter cityNameParam;
+        private DevExpress.XtraReports.Parameters.Parameter countryNameParam;
     }
 }

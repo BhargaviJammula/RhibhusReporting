@@ -41,6 +41,7 @@ builder.Services.AddScoped<ReportStorageWebExtension, CustomReportStorageWebExte
 builder.Services.AddSingleton<IScopedDbContextProvider<ReportDbContext>, ScopedDbContextProvider<ReportDbContext>>();
 builder.Services.AddSingleton<IScopedDbContextProvider<EmployeeDbContext>, ScopedDbContextProvider<EmployeeDbContext>>();
 builder.Services.AddTransient<EmployeeRepository>();
+builder.Services.AddTransient<LanguageService>();
 DeserializationSettings.RegisterTrustedClass(typeof(EmployeeRepository));
 
 builder.Services.AddDbContext<ReportDbContext>(options => options.UseSqlite(builder.Configuration.GetConnectionString("ReportsDataConnectionString")));

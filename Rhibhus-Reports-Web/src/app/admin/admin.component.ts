@@ -23,13 +23,15 @@ import { environment } from '../../environments/environment';
 })
 export class AdminComponent {
   cityNames: string[] = ["Bangalore", "Mandya", "Horanadu", "Sringeri", "Mysore"];
+  countryNames: string[] = ['Malaysia', 'Taiwan', 'Indonesia', 'USA'];
   title = 'DXReportViewerSample';
   selectedCity: string = "";
+  selectedCountry: string = "";
   reportUrl: string = 'EmployeeParamReport';
   hostUrl: string = environment.baseUrl;
   invokeAction: string = environment.adminRoutePath;
 
   submitParameter() {
-    this.reportUrl = 'EmployeeParamReport?cityNameParam=' + this.selectedCity;
+    this.reportUrl = 'EmployeeParamReport?cityNameParam=' + this.selectedCity + '&countryNameParam=' + this.selectedCountry;;
   }
 }
