@@ -1,24 +1,15 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Logging;
 using DevExpress.AspNetCore;
 using DevExpress.AspNetCore.Reporting;
 using DevExpress.Security.Resources;
-using DevExpress.XtraReports.Web.Extensions;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Rhibhus.Reports.API.Services;
-using Rhibhus.Reports.API.Data;
-using DevExpress.XtraCharts;
 using DevExpress.Utils;
+using DevExpress.XtraReports.Web.Extensions;
+using Microsoft.AspNetCore.Localization;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
+using Rhibhus.Reports.API.Data;
+using Rhibhus.Reports.API.MultilingualData.Localization;
+using Rhibhus.Reports.API.Services;
+using System.Globalization;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDevExpressControls();
@@ -42,6 +33,19 @@ builder.Services.AddSingleton<IScopedDbContextProvider<ReportDbContext>, ScopedD
 builder.Services.AddSingleton<IScopedDbContextProvider<EmployeeDbContext>, ScopedDbContextProvider<EmployeeDbContext>>();
 builder.Services.AddTransient<EmployeeRepository>();
 builder.Services.AddTransient<LanguageService>();
+builder.Services.AddLocalization();
+
+builder.Services.Configure<RequestLocalizationOptions>(
+    options =>
+    {
+        var supportedCultures = LocalizationConstants.SupportedLanguages.Select(l => new CultureInfo(l.Code)).ToArray();
+
+        options.DefaultRequestCulture = new RequestCulture(culture: "en-US", uiCulture: "en-US");
+        options.SupportedCultures = supportedCultures;
+        options.SupportedUICultures = supportedCultures;
+    });
+
+
 DeserializationSettings.RegisterTrustedClass(typeof(EmployeeRepository));
 
 builder.Services.AddDbContext<ReportDbContext>(options => options.UseSqlite(builder.Configuration.GetConnectionString("ReportsDataConnectionString")));
@@ -76,6 +80,9 @@ if(app.Environment.IsDevelopment()) {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+var localizeOptions = app.Services.GetService<IOptions<RequestLocalizationOptions>>();
+app.UseRequestLocalization(localizeOptions.Value);
 
 app.UseHttpsRedirection();
 app.UseCors("AllowCorsPolicy");
