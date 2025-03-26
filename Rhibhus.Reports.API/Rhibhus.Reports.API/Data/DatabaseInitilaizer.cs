@@ -30,7 +30,7 @@ namespace Rhibhus.Reports.API.Data
                         .RuleFor(e => e.Age, f => f.Random.Int(30, 35)) // All employees have similar age (between 30 and 35)
                         .RuleFor(e => e.City, f => f.PickRandom(cities)); // Randomly pick a city from the list
 
-                    var employeeToAdd = faker.Generate(100);
+                    var employeeToAdd = faker.Generate(10);
 
                     context.Employees.AddRange(employeeToAdd);
                     context.SaveChanges();
