@@ -1,0 +1,252 @@
+[
+  {
+    "employee_id": 1,
+    "first_name": "Lyric",
+    "last_name": "Schinner",
+    "position": "Principal Usability Director",
+    "department": "Beauty",
+    "email": "Judd_Kris@yahoo.com",
+    "phone": "364-598-0236 x66959",
+    "hire_date": "2024-07-23",
+    "salary": "951.58",
+    "address": {
+      "street": "40073 Trinity Road",
+      "city": "North Trevorfurt",
+      "state": "NH",
+      "zip_code": "14028",
+      "country": "USA"
+    },
+    "date_of_birth": "2024-07-15",
+    "gender": "Male",
+    "emergency_contact": {
+      "name": "Kenny Nader",
+      "relationship": "Spouse",
+      "phone": "(703) 534-0922 x937"
+    }
+  },
+  {
+    "employee_id": 2,
+    "first_name": "Cristopher",
+    "last_name": "Beer",
+    "position": "National Division Producer",
+    "department": "Music",
+    "email": "Buck.Nienow@yahoo.com",
+    "phone": "240.549.6881 x78062",
+    "hire_date": "2024-04-02",
+    "salary": "434.95",
+    "address": {
+      "street": "92726 Witting Rest",
+      "city": "Anabelleton",
+      "state": "DE",
+      "zip_code": "53033-7314",
+      "country": "USA"
+    },
+    "date_of_birth": "2024-06-24",
+    "gender": "Female",
+    "emergency_contact": {
+      "name": "Jimmy Hilpert",
+      "relationship": "Parent",
+      "phone": "1-248-374-5505 x0449"
+    }
+  },
+  {
+    "employee_id": 3,
+    "first_name": "Twila",
+    "last_name": "Kautzer",
+    "position": "Customer Functionality Planner",
+    "department": "Garden",
+    "email": "Oda16@hotmail.com",
+    "phone": "672-456-0317 x8701",
+    "hire_date": "2024-12-03",
+    "salary": "821.13",
+    "address": {
+      "street": "42077 Cole Rapid",
+      "city": "North Americo",
+      "state": "ND",
+      "zip_code": "07897",
+      "country": "USA"
+    },
+    "date_of_birth": "2025-02-25",
+    "gender": "Female",
+    "emergency_contact": {
+      "name": "Boyd Veum",
+      "relationship": "Spouse",
+      "phone": "(621) 992-1046 x08073"
+    }
+  },
+  {
+    "employee_id": 4,
+    "first_name": "Novella",
+    "last_name": "Parker",
+    "position": "Global Branding Designer",
+    "department": "Outdoors",
+    "email": "Berneice_Goyette@hotmail.com",
+    "phone": "1-585-416-4290 x715",
+    "hire_date": "2024-11-08",
+    "salary": "725.92",
+    "address": {
+      "street": "583 Irma Lights",
+      "city": "Fort Lottie",
+      "state": "MI",
+      "zip_code": "85635-5460",
+      "country": "USA"
+    },
+    "date_of_birth": "2024-12-02",
+    "gender": "Female",
+    "emergency_contact": {
+      "name": "Kathryn Emard",
+      "relationship": "Spouse",
+      "phone": "553.613.2875"
+    }
+  },
+  {
+    "employee_id": 5,
+    "first_name": "Estefania",
+    "last_name": "Jenkins",
+    "position": "Regional Accounts Agent",
+    "department": "Kids",
+    "email": "Janelle66@yahoo.com",
+    "phone": "275.969.9007 x65754",
+    "hire_date": "2024-05-08",
+    "salary": "631.75",
+    "address": {
+      "street": "96677 Middle Street",
+      "city": "Port Adah",
+      "state": "MD",
+      "zip_code": "06811",
+      "country": "USA"
+    },
+    "date_of_birth": "2024-10-15",
+    "gender": "Female",
+    "emergency_contact": {
+      "name": "Irene Shields",
+      "relationship": "Spouse",
+      "phone": "(264) 617-9896 x97175"
+    }
+  },
+  {
+    "employee_id": 6,
+    "first_name": "Ike",
+    "last_name": "Huels-Crooks",
+    "position": "Corporate Intranet Supervisor",
+    "department": "Electronics",
+    "email": "Larue_Schaefer65@yahoo.com",
+    "phone": "1-765-421-7998 x853",
+    "hire_date": "2025-03-11",
+    "salary": "250.78",
+    "address": {
+      "street": "254 Lafayette Centers",
+      "city": "Coybury",
+      "state": "NY",
+      "zip_code": "12169-0744",
+      "country": "USA"
+    },
+    "date_of_birth": "2025-01-12",
+    "gender": "Male",
+    "emergency_contact": {
+      "name": "Everett Langworth",
+      "relationship": "Spouse",
+      "phone": "709.986.9127 x2570"
+    }
+  },
+  {
+    "employee_id": 7,
+    "first_name": "Destiney",
+    "last_name": "Kassulke",
+    "position": "Chief Operations Producer",
+    "department": "Jewelry",
+    "email": "Imogene70@hotmail.com",
+    "phone": "(483) 605-9884",
+    "hire_date": "2024-06-15",
+    "salary": "618.38",
+    "address": {
+      "street": "409 Marley Orchard",
+      "city": "Port Kylie",
+      "state": "GA",
+      "zip_code": "84381",
+      "country": "USA"
+    },
+    "date_of_birth": "2024-08-08",
+    "gender": "Female",
+    "emergency_contact": {
+      "name": "Perry Crist",
+      "relationship": "Spouse",
+      "phone": "1-539-582-7773"
+    }
+  },
+  {
+    "employee_id": 8,
+    "first_name": "Aisha",
+    "last_name": "Nikolaus",
+    "position": "Corporate Assurance Engineer",
+    "department": "Movies",
+    "email": "Jan_Romaguera@gmail.com",
+    "phone": "647.756.2790",
+    "hire_date": "2024-08-02",
+    "salary": "407.36",
+    "address": {
+      "street": "4808 The Croft",
+      "city": "Long Beach",
+      "state": "SD",
+      "zip_code": "77375-7435",
+      "country": "USA"
+    },
+    "date_of_birth": "2024-10-19",
+    "gender": "Male",
+    "emergency_contact": {
+      "name": "Hugh MacGyver",
+      "relationship": "Spouse",
+      "phone": "(381) 796-4178 x09756"
+    }
+  },
+  {
+    "employee_id": 9,
+    "first_name": "Amelie",
+    "last_name": "Crist",
+    "position": "Dynamic Intranet Orchestrator",
+    "department": "Garden",
+    "email": "Abigayle14@hotmail.com",
+    "phone": "205.507.0272",
+    "hire_date": "2024-12-31",
+    "salary": "331.16",
+    "address": {
+      "street": "60006 Kilback Brooks",
+      "city": "Dooleyfurt",
+      "state": "IA",
+      "zip_code": "96630",
+      "country": "USA"
+    },
+    "date_of_birth": "2024-11-12",
+    "gender": "Female",
+    "emergency_contact": {
+      "name": "Leland Bartell",
+      "relationship": "Sibling",
+      "phone": "976-511-8336 x381"
+    }
+  },
+  {
+    "employee_id": 10,
+    "first_name": "Jerad",
+    "last_name": "Schimmel",
+    "position": "Chief Response Associate",
+    "department": "Toys",
+    "email": "Winnifred_Becker@hotmail.com",
+    "phone": "332.899.8369 x5702",
+    "hire_date": "2024-09-18",
+    "salary": "463.58",
+    "address": {
+      "street": "694 The Ridgeway",
+      "city": "Shayneshire",
+      "state": "SC",
+      "zip_code": "20202",
+      "country": "USA"
+    },
+    "date_of_birth": "2024-08-06",
+    "gender": "Female",
+    "emergency_contact": {
+      "name": "Margie Stracke",
+      "relationship": "Parent",
+      "phone": "554-930-4991 x18628"
+    }
+  }
+]

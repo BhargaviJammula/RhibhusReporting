@@ -14,6 +14,8 @@ namespace Rhibhus.Reports.API.PredefinedReports
             ["EmployeeReport"] = () => new EmployeeReport(),
             ["EmployeeParamReport"] = () => new EmployeeParamReport(),
             ["SimpleFeedChartReport"] = () => new SimpleFeedChartReport(),
+            ["TOCReport"] = () => new TOCReport(),
+            ["JsonReport"] = () => new JsonReport(),
         };
     }
 }
