@@ -4,6 +4,7 @@ import { AdminComponent } from './admin/admin.component';
 import { UserComponent } from './user/user.component';
 import { TabpanelComponent } from './tabpanel/tabpanel.component'
 import { SignatureComponent } from './signature/signature.component';
+import { TocComponent } from './toc/toc.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: '/admin', pathMatch: 'full' },
@@ -11,4 +12,5 @@ export const routes: Routes = [
     { path: 'tabpanel', component: TabpanelComponent },
     { path: 'user', component: UserComponent },
     { path: 'signature', component: SignatureComponent },
+    { path: 'toc', component:TocComponent  },
   ];
