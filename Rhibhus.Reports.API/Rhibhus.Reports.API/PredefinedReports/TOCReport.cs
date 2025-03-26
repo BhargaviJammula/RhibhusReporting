@@ -6,9 +6,9 @@ using DevExpress.XtraReports.UI;
 
 namespace Rhibhus.Reports.API.PredefinedReports
 {
-	public partial class EmployeeMainReport : DevExpress.XtraReports.UI.XtraReport
+	public partial class TOCReport : DevExpress.XtraReports.UI.XtraReport
 	{	
-		public EmployeeMainReport()
+		public TOCReport()
 		{
 			InitializeComponent();
 		}

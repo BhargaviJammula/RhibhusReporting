@@ -26,11 +26,11 @@ export class TocComponent  {
   cityNames: string[] = ["Bangalore", "Mandya", "Horanadu", "Sringeri", "Mysore"];
   title = 'DXReportViewerSample';
   selectedCity: string = "";
-  reportUrl: string = 'EmployeeMainReport';
+  reportUrl: string = 'TOCReport';
   hostUrl: string = environment.baseUrl;
   invokeAction: string = environment.adminRoutePath;
 
   submitParameter() {
-    this.reportUrl = 'EmployeeMainReport?cityNameParam=' + this.selectedCity;
+    this.reportUrl = 'TOCReport?cityNameParam=' + this.selectedCity;
   }
 }

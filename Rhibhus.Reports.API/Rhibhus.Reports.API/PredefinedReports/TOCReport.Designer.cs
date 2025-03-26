@@ -1,6 +1,6 @@
 ﻿namespace Rhibhus.Reports.API.PredefinedReports
 {
-    partial class EmployeeMainReport
+    partial class TOCReport
     {
         /// <summary>
         /// Required designer variable.
