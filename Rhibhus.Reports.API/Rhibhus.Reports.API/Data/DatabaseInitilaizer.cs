@@ -20,19 +20,16 @@ namespace Rhibhus.Reports.API.Data
 
                 if (!context.Employees.Any())
                 {
-                    // Define a list of cities
                     List<string> cities = new() { "Bangalore", "Mandya", "Horanadu", "Sringeri", "Mysore" };
 
-                    // Create a faker instance
                     var faker = new Faker<Employee>()
                         .RuleFor(e => e.Name, f => f.Name.FullName())
                         .RuleFor(e => e.Email, (f, e) => f.Internet.Email(e.Name))
-                        .RuleFor(e => e.Age, f => f.Random.Int(30, 35)) // All employees have similar age (between 30 and 35)
-                        .RuleFor(e => e.City, f => f.PickRandom(cities)); // Randomly pick a city from the list
+                        .RuleFor(e => e.Age, f => f.Random.Int(30, 35))
+                        .RuleFor(e => e.City, f => f.PickRandom(cities));
 
-                    var employeeToAdd = faker.Generate(100);
-
-                    context.Employees.AddRange(employeeToAdd);
+                    var employees = faker.Generate(100);
+                    context.Employees.AddRange(employees);
                     context.SaveChanges();
                 }
             }

@@ -1,11 +1,27 @@
-﻿namespace Rhibhus.Reports.API.Models
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema; // ✅ Add this!
+
+namespace Rhibhus.Reports.API.Models
 {
     public class Employee
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        public string Email { get; set; }
+        public string? Name { get; set; }
         public int Age { get; set; }
-        public string City { get; set; }
+        public string? City { get; set; }
+        public string ?Email { get; set; }
+
+        [NotMapped] // ✅ Tell EF Core to IGNORE this property
+        public List<Address> Addresses { get; set; } = new List<Address>();
+    }
+
+    public class Address
+    {
+        public string ?Street { get; set; }
+        public string ?City { get; set; }
+        public string ?State { get; set; }
+        public string ?Country { get; set; }
+        public string ?ZipCode { get; set; }
+        public string ?Type { get; set; } // Example: "Permanent", "Residential", "Office"
     }
 }

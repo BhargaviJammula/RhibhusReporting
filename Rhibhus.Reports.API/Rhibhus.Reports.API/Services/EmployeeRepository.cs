@@ -1,40 +1,62 @@
 ﻿using Bogus;
 using Rhibhus.Reports.API.Data;
 using Rhibhus.Reports.API.Models;
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Rhibhus.Reports.API.Services
 {
     public class EmployeeRepository
     {
-        readonly IScopedDbContextProvider<EmployeeDbContext> scopedDbContextProvider;
+        private readonly IScopedDbContextProvider<EmployeeDbContext> scopedDbContextProvider;
 
-        public EmployeeRepository()
-        {
-            // We use this parameterless constructor in the Data Source Wizard only, and not for the actual instantiation of the repository object.
-            throw new NotSupportedException();
-        }
+        #region Constructors
 
         public EmployeeRepository(IScopedDbContextProvider<EmployeeDbContext> scopedDbContextProvider)
         {
             this.scopedDbContextProvider = scopedDbContextProvider ?? throw new ArgumentNullException(nameof(scopedDbContextProvider));
         }
 
-        public IList<Employee> GetEmployees()
+        public EmployeeRepository()
         {
-            using (var dbContextScope = scopedDbContextProvider.GetDbContextScope())
-            {
-                var dbContext = dbContextScope.DbContext;
-                return dbContext.Employees.ToList();
-            }
+            throw new NotSupportedException();
         }
 
+        #endregion
+
+        #region Employee Methods
+
+        // Get all employees and generate dynamic addresses
+        public IList<Employee> GetEmployees()
+        {
+            return ExecuteDbContext(dbContext =>
+            {
+                var employees = dbContext.Employees.ToList();
+
+                foreach (var employee in employees)
+                {
+                    employee.Addresses = GenerateDynamicAddresses();
+
+                    // ✅ Debug Log to Verify Addresses
+                    Console.WriteLine($"Employee: {employee.Name}");
+                    foreach (var address in employee.Addresses)
+                    {
+                        Console.WriteLine($"   Address: {address.Street}, {address.City}, {address.State}, {address.ZipCode}, {address.Country}, {address.Type}");
+                    }
+                }
+
+                return employees;
+            });
+        }
+
+
+        // Get employees filtered by city and generate dynamic addresses
         public IList<Employee> GetEmployees(string cityName)
         {
-            using (var dbContextScope = scopedDbContextProvider.GetDbContextScope())
+            return ExecuteDbContext(dbContext =>
             {
-                var dbContext = dbContextScope.DbContext;
-
-                // If cityName is null or empty, return all employees
                 var query = dbContext.Employees.AsQueryable();
 
                 if (!string.IsNullOrWhiteSpace(cityName))
@@ -42,14 +64,71 @@ namespace Rhibhus.Reports.API.Services
                     query = query.Where(e => e.City.ToLower() == cityName.ToLower());
                 }
 
-                return query.ToList();
+                var employees = query.ToList();
+
+                // Generate dynamic addresses for each employee
+                foreach (var employee in employees)
+                {
+                    employee.Addresses = GenerateDynamicAddresses();
+                }
+
+                return employees;
+            });
+        }
+
+        #endregion
+
+        #region Patient Methods
+
+        // Get patient details with generated data
+        public Patient GetPatient()
+        {
+            var faker = CreateFeedChartFaker();
+
+            return ExecuteDbContext(dbContext =>
+            {
+                var employee = dbContext.Employees.FirstOrDefault();
+                if (employee == null)
+                {
+                    throw new InvalidOperationException("No employees found in the database.");
+                }
+
+                return CreatePatient(employee, faker);
+            });
+        }
+
+        #endregion
+
+        #region Private Helper Methods
+
+        // Execute a function within a DB context scope
+        private T ExecuteDbContext<T>(Func<EmployeeDbContext, T> dbContextAction)
+        {
+            using (var dbContextScope = scopedDbContextProvider.GetDbContextScope())
+            {
+                var dbContext = dbContextScope.DbContext;
+                return dbContextAction(dbContext);
             }
         }
 
-        public Patient GetPatient()
+        // Generate dynamic addresses (Instead of fetching from DB)
+        private List<Address> GenerateDynamicAddresses()
         {
-            // Create a faker instance
-            var faker = new Faker<FeedChartFooter>()
+            var faker = new Faker<Address>()
+                .RuleFor(a => a.Street, f => f.Address.StreetAddress())
+                .RuleFor(a => a.City, f => f.Address.City())
+                .RuleFor(a => a.State, f => f.Address.State())
+                .RuleFor(a => a.ZipCode, f => f.Random.Number(10000, 99999).ToString())
+                .RuleFor(a => a.Country, _ => "India")
+                .RuleFor(a => a.Type, f => f.PickRandom(new[] { "Permanent", "Residential", }));
+
+            return faker.Generate(2); // Generate 2 dynamic addresses per employee
+        }
+
+        // Create a Faker for FeedChartFooter
+        private Faker<FeedChartFooter> CreateFeedChartFaker()
+        {
+            return new Faker<FeedChartFooter>()
                 .RuleFor(e => e.Date, f => f.Date.Past().Date)
                 .RuleFor(e => e.Time, f => f.Date.Past().ToShortTimeString())
                 .RuleFor(e => e.TypeOfFeed, f => "test")
@@ -60,26 +139,27 @@ namespace Rhibhus.Reports.API.Services
                 .RuleFor(e => e.Remarks, f => "test")
                 .RuleFor(e => e.Vomitus, f => f.Random.Int(4, 10).ToString())
                 .RuleFor(e => e.User, f => f.Name.FullName());
-
-            using (var dbContextScope = scopedDbContextProvider.GetDbContextScope())
-            {
-                var dbContext = dbContextScope.DbContext;
-                var employee = dbContext.Employees.FirstOrDefault();
-                return new Patient
-                {
-                    PatientName = employee.Name,
-                    ICNo = "45098",
-                    OldICOrPassport = "M53433",
-                    MRN = "0000039639",
-                    VisitNo = "A000000001",
-                    DateOfBirth = new DateTime(1999, 12, 12),
-                    Age = "22Y 2M 25D",
-                    Sex =   "Male",
-                    BloodGroup = "AB+",
-                    WardRmBedNo = "MD1 / 73 / 73B",
-                    FooterData = faker.Generate(30)
-                };
-            }
         }
+
+        // Create a Patient object based on an employee and faker data
+        private Patient CreatePatient(Employee employee, Faker<FeedChartFooter> faker)
+        {
+            return new Patient
+            {
+                PatientName = employee.Name,
+                ICNo = "45098",
+                OldICOrPassport = "M53433",
+                MRN = "0000039639",
+                VisitNo = "A000000001",
+                DateOfBirth = new DateTime(1999, 12, 12),
+                Age = "22Y 2M 25D",
+                Sex = "Male",
+                BloodGroup = "AB+",
+                WardRmBedNo = "MD1 / 73 / 73B",
+                FooterData = faker.Generate(30)
+            };
+        }
+
+        #endregion
     }
 }

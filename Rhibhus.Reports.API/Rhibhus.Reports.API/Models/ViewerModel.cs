@@ -4,4 +4,4 @@ namespace Rhibhus.Reports.API.Models {
     public class ViewerModel {
         public WebDocumentViewerModel ViewerModelToBind { get; set; }
     }
-}
+} 
