@@ -670,7 +670,7 @@
             this.xrStatus.Name = "xrStatus";
             this.xrStatus.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrStatus.SizeF = new System.Drawing.SizeF(61.70833F, 13.625F);
-            this.xrStatus.Text = "Status ";
+            this.xrStatus.Text = "Status";
             // 
             // xrLabel23
             // 
@@ -699,7 +699,7 @@
             this.xrLanguage.Name = "xrLanguage";
             this.xrLanguage.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLanguage.SizeF = new System.Drawing.SizeF(65.62503F, 13.625F);
-            this.xrLanguage.Text = "Language ";
+            this.xrLanguage.Text = "Language";
             // 
             // xrLabel16
             // 
@@ -783,7 +783,7 @@
             this.xrNationality.Name = "xrNationality";
             this.xrNationality.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrNationality.SizeF = new System.Drawing.SizeF(72.29163F, 13.625F);
-            this.xrNationality.Text = "Nationality ";
+            this.xrNationality.Text = "Nationality";
             // 
             // xrName
             // 
@@ -792,7 +792,7 @@
             this.xrName.Name = "xrName";
             this.xrName.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrName.SizeF = new System.Drawing.SizeF(46.87503F, 13.625F);
-            this.xrName.Text = "Name ";
+            this.xrName.Text = "Name";
             // 
             // xrMaritalStatus
             // 
@@ -810,7 +810,7 @@
             this.xrGender.Name = "xrGender";
             this.xrGender.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrGender.SizeF = new System.Drawing.SizeF(65.62494F, 13.625F);
-            this.xrGender.Text = "Gender ";
+            this.xrGender.Text = "Gender";
             // 
             // xrSocialMediaHandle
             // 
@@ -837,7 +837,7 @@
             this.xrBloodType.Name = "xrBloodType";
             this.xrBloodType.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrBloodType.SizeF = new System.Drawing.SizeF(74.12497F, 13.625F);
-            this.xrBloodType.Text = "BloodType ";
+            this.xrBloodType.Text = "BloodType";
             // 
             // xrLabel2
             // 
@@ -1072,7 +1072,7 @@
             this.xrAge.Name = "xrAge";
             this.xrAge.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrAge.SizeF = new System.Drawing.SizeF(35.83328F, 13.625F);
-            this.xrAge.Text = "Age ";
+            this.xrAge.Text = "Age";
             // 
             // xrPhone
             // 
@@ -1101,7 +1101,7 @@
             this.xrOccupation.Name = "xrOccupation";
             this.xrOccupation.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrOccupation.SizeF = new System.Drawing.SizeF(83.50009F, 13.625F);
-            this.xrOccupation.Text = "Occupation ";
+            this.xrOccupation.Text = "Occupation";
             // 
             // xrLabel31
             // 
@@ -1121,7 +1121,7 @@
             this.xrAddress.Name = "xrAddress";
             this.xrAddress.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrAddress.SizeF = new System.Drawing.SizeF(56.66663F, 13.625F);
-            this.xrAddress.Text = "Address ";
+            this.xrAddress.Text = "Address";
             // 
             // xrLabel33
             // 
@@ -1141,7 +1141,7 @@
             this.xrPostalCode.Name = "xrPostalCode";
             this.xrPostalCode.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrPostalCode.SizeF = new System.Drawing.SizeF(83.50012F, 13.625F);
-            this.xrPostalCode.Text = "PostalCode ";
+            this.xrPostalCode.Text = "PostalCode";
             // 
             // xrLabel37
             // 
@@ -1161,7 +1161,7 @@
             this.xrCountry.Name = "xrCountry";
             this.xrCountry.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrCountry.SizeF = new System.Drawing.SizeF(99.04132F, 13.625F);
-            this.xrCountry.Text = "Country ";
+            this.xrCountry.Text = "Country";
             // 
             // xrLabel39
             // 
@@ -1201,7 +1201,7 @@
             this.xrProfilePicture.Name = "xrProfilePicture";
             this.xrProfilePicture.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrProfilePicture.SizeF = new System.Drawing.SizeF(95.16678F, 13.625F);
-            this.xrProfilePicture.Text = "ProfilePicture ";
+            this.xrProfilePicture.Text = "ProfilePicture";
             // 
             // xrLabel43
             // 
@@ -1823,7 +1823,7 @@
             this.xrWorkPreferences.Name = "xrWorkPreferences";
             this.xrWorkPreferences.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrWorkPreferences.SizeF = new System.Drawing.SizeF(105.6248F, 13.625F);
-            this.xrWorkPreferences.Text = "WorkPreferences ";
+            this.xrWorkPreferences.Text = "WorkPreferences";
             // 
             // xrAvailability
             // 
@@ -1850,7 +1850,7 @@
             this.xrRelocationWillingness.Name = "xrRelocationWillingness";
             this.xrRelocationWillingness.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrRelocationWillingness.SizeF = new System.Drawing.SizeF(143.7501F, 13.625F);
-            this.xrRelocationWillingness.Text = "RelocationWillingness ";
+            this.xrRelocationWillingness.Text = "RelocationWillingness";
             // 
             // xrMilitaryService
             // 
@@ -1868,7 +1868,7 @@
             this.xrAwards.Name = "xrAwards";
             this.xrAwards.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrAwards.SizeF = new System.Drawing.SizeF(61.70832F, 13.625F);
-            this.xrAwards.Text = "Awards ";
+            this.xrAwards.Text = "Awards";
             // 
             // xrVolunteerExperience
             // 
@@ -2168,7 +2168,7 @@
             this.xrPets.Name = "xrPets";
             this.xrPets.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrPets.SizeF = new System.Drawing.SizeF(47.95862F, 13.625F);
-            this.xrPets.Text = "Pets ";
+            this.xrPets.Text = "Pets";
             // 
             // xrPetType
             // 
