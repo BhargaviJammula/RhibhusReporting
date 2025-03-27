@@ -1,5 +1,15 @@
 <p>Employee Details Report!</p>
 <br>
+<div class="dropdown">
+    Country:
+    <select [(ngModel)]="selectedCountry">
+        <option *ngFor="let country of countryNames" [value]="country">{{ country }}</option>
+    </select>
+
+    &nbsp;&nbsp;
+    <button (click)="submitParameter()"><span>Submit</span></button>
+</div>
+<br>
 <dx-report-viewer [reportUrl]="reportUrl" height="800px">
     <dxrv-request-options [invokeAction]="invokeAction" [host]="hostUrl"></dxrv-request-options>
 </dx-report-viewer>

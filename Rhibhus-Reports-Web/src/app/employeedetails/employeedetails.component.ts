@@ -22,9 +22,14 @@ import { environment } from '../../environments/environment';
   ]
 })
 export class EmployeedetailsComponent  {
+  countryNames: string[] = ['Malaysia', 'Taiwan', 'Indonesia', 'USA'];
   title = 'DXReportViewerSample';
-  selectedCity: string = "";
+  selectedCountry: string = "";
   reportUrl: string = 'EmployeeDetailReport';
   hostUrl: string = environment.baseUrl;
   invokeAction: string = environment.adminRoutePath;
+
+  submitParameter() {
+    this.reportUrl = 'EmployeeDetailReport?countryNameParam=' + this.selectedCountry;;
+  }
 }
