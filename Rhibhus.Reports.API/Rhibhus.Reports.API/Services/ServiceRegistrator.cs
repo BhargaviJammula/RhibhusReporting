@@ -5,10 +5,7 @@ using DevExpress.XtraReports.Services;
 using DevExpress.XtraReports.Web.QueryBuilder.Services;
 using DevExpress.XtraReports.Web.ReportDesigner.Services;
 using DevExpress.XtraReports.Web.WebDocumentViewer;
-using Microsoft.Extensions.DependencyInjection;
 using Rhibhus.Reports.API.Services.Reporting;
-using System;
-using System.IO;
 using IDataSourceWizardConnectionStringsProvider = DevExpress.DataAccess.Web.IDataSourceWizardConnectionStringsProvider;
 
 namespace Rhibhus.Reports.API.Services
@@ -23,11 +20,14 @@ namespace Rhibhus.Reports.API.Services
             var storageCleanerSettings = new StorageCleanerSettings(TimeSpan.FromMinutes(5), TimeSpan.FromMinutes(30), TimeSpan.FromHours(12), TimeSpan.FromHours(12), TimeSpan.FromHours(12));
             services.AddSingleton<StorageCleanerSettings>(storageCleanerSettings);
 
-            services.ConfigureReportingServices(configurator => {
-                configurator.ConfigureReportDesigner((reportDesignerConfigurator) => {
+            services.ConfigureReportingServices(configurator =>
+            {
+                configurator.ConfigureReportDesigner((reportDesignerConfigurator) =>
+                {
                     reportDesignerConfigurator.RegisterObjectDataSourceConstructorFilterService<CustomObjectDataSourceConstructorFilterService>();
                 });
-                configurator.ConfigureWebDocumentViewer(viewerConfigurator => {
+                configurator.ConfigureWebDocumentViewer(viewerConfigurator =>
+                {
                     // StorageSynchronizationMode.InterThread - it is a default value, use InterProcess if you use multiple application instances without ARR Affinity
                     viewerConfigurator.UseFileDocumentStorage(Path.Combine(contentRootPath, "ViewerStorages\\Documents"), StorageSynchronizationMode.InterThread);
                     viewerConfigurator.UseFileExportedDocumentStorage(Path.Combine(contentRootPath, "ViewerStorages\\ExportedDocuments"), StorageSynchronizationMode.InterThread);

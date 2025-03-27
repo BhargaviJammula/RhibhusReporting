@@ -1,7 +1,4 @@
-﻿using System.Linq;
-using DevExpress.DataAccess.DataFederation;
-using DevExpress.ReportServer.ServiceModel.DataContracts;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Rhibhus.Reports.API.Models;
 
 namespace Rhibhus.Reports.API.Data

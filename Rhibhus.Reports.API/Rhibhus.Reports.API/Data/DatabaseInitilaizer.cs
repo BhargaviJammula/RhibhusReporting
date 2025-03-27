@@ -1,9 +1,5 @@
 ﻿using Bogus;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.DependencyInjection;
 using Rhibhus.Reports.API.Models;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace Rhibhus.Reports.API.Data
 {

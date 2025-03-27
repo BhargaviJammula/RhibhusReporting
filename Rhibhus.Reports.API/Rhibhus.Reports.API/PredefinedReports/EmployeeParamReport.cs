@@ -1,9 +1,6 @@
 ﻿using DevExpress.XtraReports.UI;
 using Rhibhus.Reports.API.Services;
-using System;
-using System.Collections;
 using System.ComponentModel;
-using System.Drawing;
 
 namespace Rhibhus.Reports.API.PredefinedReports
 {
@@ -16,27 +13,9 @@ namespace Rhibhus.Reports.API.PredefinedReports
 
         private void EmployeeParamReport_BeforePrint(object sender, CancelEventArgs e)
         {
-            string fileName = "english.json";
-
             var countryName = this.Parameters["countryNameParam"]?.Value?.ToString() ?? "USA";
 
-            switch (countryName.ToLower()) // Use ToLower() for case-insensitive comparison
-            {
-                case "malaysia":
-                    fileName = "malaysia.json";
-                    break;
-                case "taiwan":
-                    fileName = "taiwan.json";
-                    break;
-                case "indonesia":
-                    fileName = "indonesia.json";
-                    break;
-                case "usa":
-                    fileName = "english.json";
-                    break;
-            }
-
-            var languageData = new LanguageService().ReadJsonFromFile(fileName);
+            var languageData = new LanguageService().ReadJsonFromFile(countryName);
 
             #region Type 1
 

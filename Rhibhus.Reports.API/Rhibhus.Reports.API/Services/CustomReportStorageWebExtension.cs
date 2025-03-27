@@ -1,10 +1,6 @@
-﻿using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using DevExpress.XtraReports.UI;
-using Rhibhus.Reports.API.PredefinedReports;
+﻿using DevExpress.XtraReports.UI;
 using Rhibhus.Reports.API.Data;
-using DevExpress.XtraReports.Services;
+using Rhibhus.Reports.API.PredefinedReports;
 using System.Web;
 
 namespace Rhibhus.Reports.API.Services
@@ -12,11 +8,13 @@ namespace Rhibhus.Reports.API.Services
     public class CustomReportStorageWebExtension : DevExpress.XtraReports.Web.Extensions.ReportStorageWebExtension
     {
         protected ReportDbContext DbContext { get; set; }
-        public CustomReportStorageWebExtension(ReportDbContext dbContext) {
+        public CustomReportStorageWebExtension(ReportDbContext dbContext)
+        {
             this.DbContext = dbContext;
         }
 
-        public override bool CanSetData(string url) {
+        public override bool CanSetData(string url)
+        {
             // Determines whether a report with the specified URL can be saved.
             // Add custom logic that returns **false** for reports that should be read-only.
             // Return **true** if no valdation is required.
@@ -25,7 +23,8 @@ namespace Rhibhus.Reports.API.Services
             return true;
         }
 
-        public override bool IsValidUrl(string url) {
+        public override bool IsValidUrl(string url)
+        {
             // Determines whether the URL passed to the current report storage is valid.
             // Implement your own logic to prohibit URLs that contain spaces or other specific characters.
             // Return **true** if no validation is required.
@@ -92,7 +91,8 @@ namespace Rhibhus.Reports.API.Services
             return ms.ToArray();
         }
 
-        public override Dictionary<string, string> GetUrls() {
+        public override Dictionary<string, string> GetUrls()
+        {
             // Returns a dictionary that contains the report names (URLs) and display names. 
             // The Report Designer uses this method to populate the Open Report and Save Report dialogs.
 
@@ -103,20 +103,25 @@ namespace Rhibhus.Reports.API.Services
                 .ToDictionary<string, string>(x => x);
         }
 
-        public override void SetData(XtraReport report, string url) {
+        public override void SetData(XtraReport report, string url)
+        {
             // Saves the specified report to the report storage with the specified name
             // (saves existing reports only). 
             using var stream = new MemoryStream(); report.SaveLayoutToXml(stream);
             var reportData = DbContext.Reports.FirstOrDefault(x => x.Name == url);
-            if(reportData == null) {
+            if (reportData == null)
+            {
                 DbContext.Reports.Add(new ReportItem { Name = url, LayoutData = stream.ToArray() });
-            } else {
+            }
+            else
+            {
                 reportData.LayoutData = stream.ToArray();
             }
             DbContext.SaveChanges();
         }
 
-        public override string SetNewData(XtraReport report, string defaultUrl) {
+        public override string SetNewData(XtraReport report, string defaultUrl)
+        {
             // Allows you to validate and correct the specified name (URL).
             // This method also allows you to return the resulting name (URL),
             // and to save your report to a storage. The method is called only for new reports.

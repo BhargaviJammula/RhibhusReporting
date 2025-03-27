@@ -1,8 +1,6 @@
-using System;
 using DevExpress.DataAccess.ObjectBinding;
 using DevExpress.XtraReports.Native.Data;
 using DevExpress.XtraReports.UI;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace Rhibhus.Reports.API.Services
 {

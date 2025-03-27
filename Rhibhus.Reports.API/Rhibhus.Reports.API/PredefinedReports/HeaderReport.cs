@@ -1,16 +1,10 @@
-﻿using System;
-using System.Drawing;
-using System.Collections;
-using System.ComponentModel;
-using DevExpress.XtraReports.UI;
-
-namespace Rhibhus.Reports.API.PredefinedReports
+﻿namespace Rhibhus.Reports.API.PredefinedReports
 {
-	public partial class HeaderReport : DevExpress.XtraReports.UI.XtraReport
-	{	
-		public HeaderReport()
-		{
-			InitializeComponent();
-		}
-	}
+    public partial class HeaderReport : DevExpress.XtraReports.UI.XtraReport
+    {
+        public HeaderReport()
+        {
+            InitializeComponent();
+        }
+    }
 }

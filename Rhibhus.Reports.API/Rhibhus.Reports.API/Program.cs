@@ -14,13 +14,17 @@ using System.Globalization;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDevExpressControls();
 builder.Services.AddControllers();
-builder.Services.ConfigureReportingServices(configurator => {
-    if(builder.Environment.IsDevelopment()) {
+builder.Services.ConfigureReportingServices(configurator =>
+{
+    if (builder.Environment.IsDevelopment())
+    {
         configurator.UseDevelopmentMode();
     }
-    configurator.ConfigureReportDesigner(designerConfigurator => {
+    configurator.ConfigureReportDesigner(designerConfigurator =>
+    {
     });
-    configurator.ConfigureWebDocumentViewer(viewerConfigurator => {
+    configurator.ConfigureWebDocumentViewer(viewerConfigurator =>
+    {
         viewerConfigurator.UseCachedReportSourceBuilder();
         viewerConfigurator.RegisterConnectionProviderFactory<CustomSqlDataConnectionProviderFactory>();
     });
@@ -52,8 +56,10 @@ builder.Services.AddDbContext<ReportDbContext>(options => options.UseSqlite(buil
 
 builder.Services.AddDbContext<EmployeeDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultMSSqlConnection")));
 
-builder.Services.AddCors(options => {
-    options.AddPolicy("AllowCorsPolicy", builder => {
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowCorsPolicy", builder =>
+    {
         // Allow all ports on local host.
         builder.SetIsOriginAllowed(origin => new Uri(origin).Host == "localhost");
         builder.AllowAnyHeader();
@@ -68,15 +74,17 @@ builder.Services.AddSwaggerGen();
 var app = builder.Build();
 
 DatabaseInitilaizer.Seed(app);
-using (var scope = app.Services.CreateScope()) {    
-    var services = scope.ServiceProvider;    
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
     services.GetService<ReportDbContext>().InitializeDatabase();
 }
 var contentDirectoryAllowRule = DirectoryAccessRule.Allow(new DirectoryInfo(Path.Combine(builder.Environment.ContentRootPath, "Content")).FullName);
 AccessSettings.ReportingSpecificResources.TrySetRules(contentDirectoryAllowRule, UrlAccessRule.Allow());
 app.UseDevExpressControls();
 System.Net.ServicePointManager.SecurityProtocol |= System.Net.SecurityProtocolType.Tls12;
-if(app.Environment.IsDevelopment()) {
+if (app.Environment.IsDevelopment())
+{
     app.UseSwagger();
     app.UseSwaggerUI();
 }
