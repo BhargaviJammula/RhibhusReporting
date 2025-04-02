@@ -214,6 +214,8 @@
             // xrLabel6
             // 
             this.xrLabel6.Dpi = 254F;
+            this.xrLabel6.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "iif(?roleNameParam == \'Admin\', \'\', \'City\')\n")});
             this.xrLabel6.Font = new DevExpress.Drawing.DXFont("Times New Roman", 13.59F);
             this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(491.1604F, 408.5283F);
             this.xrLabel6.Multiline = true;
@@ -228,6 +230,8 @@
             // xrLabel5
             // 
             this.xrLabel5.Dpi = 254F;
+            this.xrLabel5.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "iif(?roleNameParam == \'Accountant\', \'\', \'Age\')\n")});
             this.xrLabel5.Font = new DevExpress.Drawing.DXFont("Times New Roman", 13.59F);
             this.xrLabel5.LocationFloat = new DevExpress.Utils.PointFloat(502.9198F, 305.6349F);
             this.xrLabel5.Multiline = true;
@@ -242,6 +246,8 @@
             // xrLabel4
             // 
             this.xrLabel4.Dpi = 254F;
+            this.xrLabel4.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "iif(?roleNameParam == \'Staff\', \'\', \'Email\')\n")});
             this.xrLabel4.Font = new DevExpress.Drawing.DXFont("Times New Roman", 13.59F);
             this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(502.9198F, 208.327F);
             this.xrLabel4.Multiline = true;
@@ -256,6 +262,8 @@
             // xrLabel3
             // 
             this.xrLabel3.Dpi = 254F;
+            this.xrLabel3.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "iif(?roleNameParam == \'Nurse\', \'\', \'Name\')\n")});
             this.xrLabel3.Font = new DevExpress.Drawing.DXFont("Times New Roman", 13.59F);
             this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(502.9198F, 102.87F);
             this.xrLabel3.Multiline = true;
@@ -270,6 +278,8 @@
             // xrLabel2
             // 
             this.xrLabel2.Dpi = 254F;
+            this.xrLabel2.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "iif(?roleNameParam == \'Doctor\', \'\', \'Id\')\n")});
             this.xrLabel2.Font = new DevExpress.Drawing.DXFont("Times New Roman", 13.59F);
             this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(502.9197F, 0F);
             this.xrLabel2.Multiline = true;
