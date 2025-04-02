@@ -5,6 +5,10 @@
     <select [(ngModel)]="selectedCity">
         <option *ngFor="let city of cityNames" [value]="city">{{ city }}</option>
     </select> &nbsp;&nbsp;
+    Please Select Role: 
+    <select [(ngModel)]="selectedrole">
+        <option *ngFor="let role of roleNames" [value]="role">{{ role }}</option>
+    </select> &nbsp;&nbsp;
     <button (click)="submitParameter()"><span>Submit</span></button>
 </div>
 <br>

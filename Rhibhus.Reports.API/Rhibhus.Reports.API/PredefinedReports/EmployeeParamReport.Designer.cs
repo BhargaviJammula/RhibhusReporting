@@ -53,6 +53,9 @@
             this.odsGetEmployees = new DevExpress.DataAccess.ObjectBinding.ObjectDataSource(this.components);
             this.cityNameParam = new DevExpress.XtraReports.Parameters.Parameter();
             this.countryNameParam = new DevExpress.XtraReports.Parameters.Parameter();
+            this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
+            this.PageFooter = new DevExpress.XtraReports.UI.PageFooterBand();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.odsGetEmployees)).BeginInit();
@@ -265,6 +268,33 @@
             this.countryNameParam.Name = "countryNameParam";
             this.countryNameParam.ValueInfo = "USA";
             // 
+            // xrLabel2
+            // 
+            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 10.00001F);
+            this.xrLabel2.Multiline = true;
+            this.xrLabel2.Name = "xrLabel2";
+            this.xrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel2.SizeF = new System.Drawing.SizeF(145.8333F, 23F);
+            this.xrLabel2.Text = "NO.OF.EMPLOYEES";
+            // 
+            // xrLabel3
+            // 
+            this.xrLabel3.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[DataSource.RowCount]\n")});
+            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(175F, 10.00001F);
+            this.xrLabel3.Multiline = true;
+            this.xrLabel3.Name = "xrLabel3";
+            this.xrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel3.SizeF = new System.Drawing.SizeF(100F, 23F);
+            this.xrLabel3.Text = "xrLabel3";
+            // 
+            // PageFooter
+            // 
+            this.PageFooter.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrLabel3,
+            this.xrLabel2});
+            this.PageFooter.Name = "PageFooter";
+            // 
             // EmployeeParamReport
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -272,7 +302,8 @@
             this.BottomMargin,
             this.Detail,
             this.ReportHeader,
-            this.PageHeader});
+            this.PageHeader,
+            this.PageFooter});
             this.ComponentStorage.AddRange(new System.ComponentModel.IComponent[] {
             this.odsGetEmployees});
             this.DataSource = this.odsGetEmployees;
@@ -317,5 +348,8 @@
         private DevExpress.DataAccess.ObjectBinding.ObjectDataSource odsGetEmployees;
         private DevExpress.XtraReports.Parameters.Parameter cityNameParam;
         private DevExpress.XtraReports.Parameters.Parameter countryNameParam;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel3;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel2;
+        private DevExpress.XtraReports.UI.PageFooterBand PageFooter;
     }
 }

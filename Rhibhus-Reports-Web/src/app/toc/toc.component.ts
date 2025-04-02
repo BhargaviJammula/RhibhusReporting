@@ -24,13 +24,16 @@ import { environment } from '../../environments/environment';
 })
 export class TocComponent  {
   cityNames: string[] = ["Bangalore", "Mandya", "Horanadu", "Sringeri", "Mysore"];
+  roleNames: string[] = ["Doctor", "Nurse", "Staff", "Accountant", "Admin"];
   title = 'DXReportViewerSample';
   selectedCity: string = "";
+  selectedrole: string = "";
   reportUrl: string = 'TOCReport';
   hostUrl: string = environment.baseUrl;
   invokeAction: string = environment.adminRoutePath;
 
   submitParameter() {
-    this.reportUrl = 'TOCReport?cityNameParam=' + this.selectedCity;
-  }
+    this.reportUrl = `TOCReport?cityNameParam=${this.selectedCity}&roleNameParam=${this.selectedrole}`;
+}
+
 }
