@@ -145,11 +145,11 @@
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Bookmark", "[Name]"),
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Name]\n")});
             this.xrNameValue.Font = new DevExpress.Drawing.DXFont("Times New Roman", 14F);
-            this.xrNameValue.LocationFloat = new DevExpress.Utils.PointFloat(898.3252F, 102.87F);
+            this.xrNameValue.LocationFloat = new DevExpress.Utils.PointFloat(1011.515F, 102.87F);
             this.xrNameValue.Multiline = true;
             this.xrNameValue.Name = "xrNameValue";
             this.xrNameValue.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.xrNameValue.SizeF = new System.Drawing.SizeF(1031.875F, 58.41998F);
+            this.xrNameValue.SizeF = new System.Drawing.SizeF(986.8958F, 58.41998F);
             this.xrNameValue.StylePriority.UseFont = false;
             this.xrNameValue.Text = "xrName";
             // 
@@ -159,11 +159,11 @@
             this.xrEmailValue.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Email]\n")});
             this.xrEmailValue.Font = new DevExpress.Drawing.DXFont("Times New Roman", 14F);
-            this.xrEmailValue.LocationFloat = new DevExpress.Utils.PointFloat(898.3252F, 208.327F);
+            this.xrEmailValue.LocationFloat = new DevExpress.Utils.PointFloat(1011.515F, 208.327F);
             this.xrEmailValue.Multiline = true;
             this.xrEmailValue.Name = "xrEmailValue";
             this.xrEmailValue.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.xrEmailValue.SizeF = new System.Drawing.SizeF(1031.875F, 58.41998F);
+            this.xrEmailValue.SizeF = new System.Drawing.SizeF(986.8958F, 58.41998F);
             this.xrEmailValue.StylePriority.UseFont = false;
             this.xrEmailValue.Text = "xrEmail";
             // 
@@ -173,11 +173,11 @@
             this.xrCityValue.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[City]\n")});
             this.xrCityValue.Font = new DevExpress.Drawing.DXFont("Times New Roman", 14F);
-            this.xrCityValue.LocationFloat = new DevExpress.Utils.PointFloat(898.3252F, 408.5283F);
+            this.xrCityValue.LocationFloat = new DevExpress.Utils.PointFloat(1011.515F, 408.5283F);
             this.xrCityValue.Multiline = true;
             this.xrCityValue.Name = "xrCityValue";
             this.xrCityValue.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.xrCityValue.SizeF = new System.Drawing.SizeF(1031.875F, 58.41995F);
+            this.xrCityValue.SizeF = new System.Drawing.SizeF(986.8958F, 58.41995F);
             this.xrCityValue.StylePriority.UseFont = false;
             this.xrCityValue.Text = "xrCity";
             // 
@@ -187,11 +187,11 @@
             this.xrAgeValue.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Age]\n")});
             this.xrAgeValue.Font = new DevExpress.Drawing.DXFont("Times New Roman", 14F);
-            this.xrAgeValue.LocationFloat = new DevExpress.Utils.PointFloat(898.3251F, 305.6348F);
+            this.xrAgeValue.LocationFloat = new DevExpress.Utils.PointFloat(1011.514F, 305.6348F);
             this.xrAgeValue.Multiline = true;
             this.xrAgeValue.Name = "xrAgeValue";
             this.xrAgeValue.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.xrAgeValue.SizeF = new System.Drawing.SizeF(1031.875F, 58.42001F);
+            this.xrAgeValue.SizeF = new System.Drawing.SizeF(986.8962F, 58.42004F);
             this.xrAgeValue.StylePriority.UseFont = false;
             this.xrAgeValue.Text = "xrAge";
             // 
@@ -201,7 +201,7 @@
             this.xrIdValue.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Id]\n")});
             this.xrIdValue.Font = new DevExpress.Drawing.DXFont("Times New Roman", 14F);
-            this.xrIdValue.LocationFloat = new DevExpress.Utils.PointFloat(898.3252F, 0F);
+            this.xrIdValue.LocationFloat = new DevExpress.Utils.PointFloat(1011.515F, 0F);
             this.xrIdValue.Multiline = true;
             this.xrIdValue.Name = "xrIdValue";
             this.xrIdValue.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
