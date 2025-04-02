@@ -462,6 +462,7 @@
             watermark1.TextTransparency = 167;
             this.Watermarks.AddRange(new DevExpress.XtraPrinting.Drawing.Watermark[] {
             watermark1});
+            this.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.TOCReport_BeforePrint);
             ((System.ComponentModel.ISupportInitialize)(this.objectDataSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
