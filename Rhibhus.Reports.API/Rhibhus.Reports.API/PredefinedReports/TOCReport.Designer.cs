@@ -59,6 +59,7 @@
             this.Permanent = new DevExpress.XtraReports.UI.CalculatedField();
             this.Temporary = new DevExpress.XtraReports.UI.CalculatedField();
             this.cityNameParam = new DevExpress.XtraReports.Parameters.Parameter();
+            this.roleNameParam = new DevExpress.XtraReports.Parameters.Parameter();
             ((System.ComponentModel.ISupportInitialize)(this.objectDataSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
@@ -141,8 +142,8 @@
             // 
             this.xrLabel11.Dpi = 254F;
             this.xrLabel11.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Name]"),
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Bookmark", "[Name]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Bookmark", "[Name]"),
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "Iif([Parameters.roleNameParam] == \'Nurse\', \'\', [Name])\n")});
             this.xrLabel11.Font = new DevExpress.Drawing.DXFont("Times New Roman", 14F);
             this.xrLabel11.LocationFloat = new DevExpress.Utils.PointFloat(898.3252F, 102.87F);
             this.xrLabel11.Multiline = true;
@@ -156,7 +157,7 @@
             // 
             this.xrLabel10.Dpi = 254F;
             this.xrLabel10.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Email]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "Iif([Parameters.roleNameParam] == \'Staff\', \'\', [Email])\n")});
             this.xrLabel10.Font = new DevExpress.Drawing.DXFont("Times New Roman", 14F);
             this.xrLabel10.LocationFloat = new DevExpress.Utils.PointFloat(898.3252F, 208.327F);
             this.xrLabel10.Multiline = true;
@@ -170,7 +171,7 @@
             // 
             this.xrLabel9.Dpi = 254F;
             this.xrLabel9.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[City]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "Iif([Parameters.roleNameParam] == \'Admin\', \'\', [City])\n")});
             this.xrLabel9.Font = new DevExpress.Drawing.DXFont("Times New Roman", 14F);
             this.xrLabel9.LocationFloat = new DevExpress.Utils.PointFloat(898.3252F, 408.5283F);
             this.xrLabel9.Multiline = true;
@@ -184,7 +185,7 @@
             // 
             this.xrLabel8.Dpi = 254F;
             this.xrLabel8.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Age]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "Iif([Parameters.roleNameParam] == \'Accountant\', \'\', [Age])\n")});
             this.xrLabel8.Font = new DevExpress.Drawing.DXFont("Times New Roman", 14F);
             this.xrLabel8.LocationFloat = new DevExpress.Utils.PointFloat(898.3257F, 305.6349F);
             this.xrLabel8.Multiline = true;
@@ -198,7 +199,7 @@
             // 
             this.xrLabel7.Dpi = 254F;
             this.xrLabel7.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Id]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "Iif([Parameters.roleNameParam] == \'Doctor\', \'\', [ID])\n")});
             this.xrLabel7.Font = new DevExpress.Drawing.DXFont("Times New Roman", 14F);
             this.xrLabel7.LocationFloat = new DevExpress.Utils.PointFloat(898.3252F, 0F);
             this.xrLabel7.Multiline = true;
@@ -405,6 +406,12 @@
             this.cityNameParam.Name = "cityNameParam";
             this.cityNameParam.Visible = false;
             // 
+            // roleNameParam
+            // 
+            this.roleNameParam.Description = "Parameter1";
+            this.roleNameParam.Name = "roleNameParam";
+            this.roleNameParam.Visible = false;
+            // 
             // TOCReport
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -422,13 +429,19 @@
             this.objectDataSource1});
             this.DataSource = this.objectDataSource1;
             this.Dpi = 254F;
-            this.FilterString = "[City] = ?cityNameParam Or ?cityNameParam Is Null Or ?cityNameParam = \'\'";
+            this.FilterString = "(?cityNameParam = ?cityNameParam Or ?cityNameParam Is Null) And (?roleNameParam =" +
+    " ?roleNameParam Or ?roleNameParam Is Null)";
             this.Margins = new DevExpress.Drawing.DXMargins(25.4F, 64F, 0F, 0F);
             this.PageHeight = 2794;
             this.PageWidth = 2159;
+            this.ParameterPanelLayoutItems.AddRange(new DevExpress.XtraReports.Parameters.ParameterPanelLayoutItem[] {
+            new DevExpress.XtraReports.Parameters.ParameterLayoutItem(this.cityNameParam, DevExpress.XtraReports.Parameters.Orientation.Horizontal),
+            new DevExpress.XtraReports.Parameters.ParameterLayoutItem(this.ID, DevExpress.XtraReports.Parameters.Orientation.Horizontal),
+            new DevExpress.XtraReports.Parameters.ParameterLayoutItem(this.roleNameParam, DevExpress.XtraReports.Parameters.Orientation.Horizontal)});
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
             this.cityNameParam,
-            this.ID});
+            this.ID,
+            this.roleNameParam});
             this.ReportUnit = DevExpress.XtraReports.UI.ReportUnit.TenthsOfAMillimeter;
             this.SnapGridSize = 25F;
             this.Version = "24.2";
@@ -475,5 +488,6 @@
         private DevExpress.XtraReports.Parameters.Parameter cityNameParam;
         private DevExpress.XtraReports.Parameters.Parameter ID;
         private DevExpress.XtraReports.UI.XRTableOfContents xrTableOfContents1;
+        private DevExpress.XtraReports.Parameters.Parameter roleNameParam;
     }
 }
