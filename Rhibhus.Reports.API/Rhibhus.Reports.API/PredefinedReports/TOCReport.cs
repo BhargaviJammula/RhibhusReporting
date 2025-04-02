@@ -19,7 +19,16 @@ namespace Rhibhus.Reports.API.PredefinedReports
                     this.FindControl("xrId", true).Visible = false;
                     break;
                 case UserRoleConstants.Accountant:
+                    this.FindControl("xrAge", true).Visible = false;
+                    break;
+                case UserRoleConstants.Nurse:
+                    this.FindControl("xrName", true).Visible = false;
+                    break;
+                case UserRoleConstants.Staff:
                     this.FindControl("xrEmail", true).Visible = false;
+                    break;
+                case UserRoleConstants.Admin:
+                    this.FindControl("xrCity", true).Visible = false;
                     break;
                 default:
                     break;
