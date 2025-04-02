@@ -35,16 +35,16 @@
             this.xrSubreport2 = new DevExpress.XtraReports.UI.XRSubreport();
             this.xrSubreport3 = new DevExpress.XtraReports.UI.XRSubreport();
             this.xrLabel14 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrNAMEVALUE = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrEMAILVALUE = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrCITYVALUE = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrAGEVALUE = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrIDVALUE = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrCITY = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrAGE = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrEMAIL = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrNameValue = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrEmailValue = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrCityValue = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrAgeValue = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrIdValue = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrCity = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrAge = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrEmail = new DevExpress.XtraReports.UI.XRLabel();
             this.xrName = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrID = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrId = new DevExpress.XtraReports.UI.XRLabel();
             this.bottomMarginBand1 = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.ReportHeader = new DevExpress.XtraReports.UI.ReportHeaderBand();
             this.xrTableOfContents1 = new DevExpress.XtraReports.UI.XRTableOfContents();
@@ -75,16 +75,16 @@
             this.xrSubreport2,
             this.xrSubreport3,
             this.xrLabel14,
-            this.xrNAMEVALUE,
-            this.xrEMAILVALUE,
-            this.xrCITYVALUE,
-            this.xrAGEVALUE,
-            this.xrIDVALUE,
-            this.xrCITY,
-            this.xrAGE,
-            this.xrEMAIL,
+            this.xrNameValue,
+            this.xrEmailValue,
+            this.xrCityValue,
+            this.xrAgeValue,
+            this.xrIdValue,
+            this.xrCity,
+            this.xrAge,
+            this.xrEmail,
             this.xrName,
-            this.xrID});
+            this.xrId});
             this.detailBand1.Dpi = 254F;
             this.detailBand1.HeightF = 709.1528F;
             this.detailBand1.HierarchyPrintOptions.Indent = 50.8F;
@@ -138,132 +138,132 @@
             this.xrLabel14.Text = "ADDRESSES";
             this.xrLabel14.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
             // 
-            // xrNAMEVALUE
+            // xrNameValue
             // 
-            this.xrNAMEVALUE.Dpi = 254F;
-            this.xrNAMEVALUE.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            this.xrNameValue.Dpi = 254F;
+            this.xrNameValue.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Bookmark", "[Name]"),
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "Iif([Parameters.roleNameParam] == \'Nurse\', \'\', [Name])\n")});
-            this.xrNAMEVALUE.Font = new DevExpress.Drawing.DXFont("Times New Roman", 14F);
-            this.xrNAMEVALUE.LocationFloat = new DevExpress.Utils.PointFloat(898.3252F, 102.87F);
-            this.xrNAMEVALUE.Multiline = true;
-            this.xrNAMEVALUE.Name = "xrNAMEVALUE";
-            this.xrNAMEVALUE.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.xrNAMEVALUE.SizeF = new System.Drawing.SizeF(1031.875F, 58.41998F);
-            this.xrNAMEVALUE.StylePriority.UseFont = false;
-            this.xrNAMEVALUE.Text = "xrNAME";
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Name]\n")});
+            this.xrNameValue.Font = new DevExpress.Drawing.DXFont("Times New Roman", 14F);
+            this.xrNameValue.LocationFloat = new DevExpress.Utils.PointFloat(898.3252F, 102.87F);
+            this.xrNameValue.Multiline = true;
+            this.xrNameValue.Name = "xrNameValue";
+            this.xrNameValue.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrNameValue.SizeF = new System.Drawing.SizeF(1031.875F, 58.41998F);
+            this.xrNameValue.StylePriority.UseFont = false;
+            this.xrNameValue.Text = "xrName";
             // 
-            // xrEMAILVALUE
+            // xrEmailValue
             // 
-            this.xrEMAILVALUE.Dpi = 254F;
-            this.xrEMAILVALUE.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "Iif([Parameters.roleNameParam] == \'Staff\', \'\', [Email])\n")});
-            this.xrEMAILVALUE.Font = new DevExpress.Drawing.DXFont("Times New Roman", 14F);
-            this.xrEMAILVALUE.LocationFloat = new DevExpress.Utils.PointFloat(898.3252F, 208.327F);
-            this.xrEMAILVALUE.Multiline = true;
-            this.xrEMAILVALUE.Name = "xrEMAILVALUE";
-            this.xrEMAILVALUE.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.xrEMAILVALUE.SizeF = new System.Drawing.SizeF(1031.875F, 58.41998F);
-            this.xrEMAILVALUE.StylePriority.UseFont = false;
-            this.xrEMAILVALUE.Text = "xrEMAIL";
+            this.xrEmailValue.Dpi = 254F;
+            this.xrEmailValue.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Email]\n")});
+            this.xrEmailValue.Font = new DevExpress.Drawing.DXFont("Times New Roman", 14F);
+            this.xrEmailValue.LocationFloat = new DevExpress.Utils.PointFloat(898.3252F, 208.327F);
+            this.xrEmailValue.Multiline = true;
+            this.xrEmailValue.Name = "xrEmailValue";
+            this.xrEmailValue.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrEmailValue.SizeF = new System.Drawing.SizeF(1031.875F, 58.41998F);
+            this.xrEmailValue.StylePriority.UseFont = false;
+            this.xrEmailValue.Text = "xrEmail";
             // 
-            // xrCITYVALUE
+            // xrCityValue
             // 
-            this.xrCITYVALUE.Dpi = 254F;
-            this.xrCITYVALUE.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "Iif([Parameters.roleNameParam] == \'Admin\', \'\', [City])\n")});
-            this.xrCITYVALUE.Font = new DevExpress.Drawing.DXFont("Times New Roman", 14F);
-            this.xrCITYVALUE.LocationFloat = new DevExpress.Utils.PointFloat(898.3252F, 408.5283F);
-            this.xrCITYVALUE.Multiline = true;
-            this.xrCITYVALUE.Name = "xrCITYVALUE";
-            this.xrCITYVALUE.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.xrCITYVALUE.SizeF = new System.Drawing.SizeF(1031.875F, 58.41995F);
-            this.xrCITYVALUE.StylePriority.UseFont = false;
-            this.xrCITYVALUE.Text = "xrCITY";
+            this.xrCityValue.Dpi = 254F;
+            this.xrCityValue.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[City]\n")});
+            this.xrCityValue.Font = new DevExpress.Drawing.DXFont("Times New Roman", 14F);
+            this.xrCityValue.LocationFloat = new DevExpress.Utils.PointFloat(898.3252F, 408.5283F);
+            this.xrCityValue.Multiline = true;
+            this.xrCityValue.Name = "xrCityValue";
+            this.xrCityValue.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrCityValue.SizeF = new System.Drawing.SizeF(1031.875F, 58.41995F);
+            this.xrCityValue.StylePriority.UseFont = false;
+            this.xrCityValue.Text = "xrCity";
             // 
-            // xrAGEVALUE
+            // xrAgeValue
             // 
-            this.xrAGEVALUE.Dpi = 254F;
-            this.xrAGEVALUE.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "Iif([Parameters.roleNameParam] == \'Accountant\', \'\', [Age])\n")});
-            this.xrAGEVALUE.Font = new DevExpress.Drawing.DXFont("Times New Roman", 14F);
-            this.xrAGEVALUE.LocationFloat = new DevExpress.Utils.PointFloat(898.3257F, 305.6349F);
-            this.xrAGEVALUE.Multiline = true;
-            this.xrAGEVALUE.Name = "xrAGEVALUE";
-            this.xrAGEVALUE.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.xrAGEVALUE.SizeF = new System.Drawing.SizeF(1031.875F, 58.42001F);
-            this.xrAGEVALUE.StylePriority.UseFont = false;
-            this.xrAGEVALUE.Text = "xrAGE";
+            this.xrAgeValue.Dpi = 254F;
+            this.xrAgeValue.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Age]\n")});
+            this.xrAgeValue.Font = new DevExpress.Drawing.DXFont("Times New Roman", 14F);
+            this.xrAgeValue.LocationFloat = new DevExpress.Utils.PointFloat(898.3251F, 305.6348F);
+            this.xrAgeValue.Multiline = true;
+            this.xrAgeValue.Name = "xrAgeValue";
+            this.xrAgeValue.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrAgeValue.SizeF = new System.Drawing.SizeF(1031.875F, 58.42001F);
+            this.xrAgeValue.StylePriority.UseFont = false;
+            this.xrAgeValue.Text = "xrAge";
             // 
-            // xrIDVALUE
+            // xrIdValue
             // 
-            this.xrIDVALUE.Dpi = 254F;
-            this.xrIDVALUE.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "Iif([Parameters.roleNameParam] == \'Doctor\', \'\', [ID])\n")});
-            this.xrIDVALUE.Font = new DevExpress.Drawing.DXFont("Times New Roman", 14F);
-            this.xrIDVALUE.LocationFloat = new DevExpress.Utils.PointFloat(898.3252F, 0F);
-            this.xrIDVALUE.Multiline = true;
-            this.xrIDVALUE.Name = "xrIDVALUE";
-            this.xrIDVALUE.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.xrIDVALUE.SizeF = new System.Drawing.SizeF(399.5209F, 58.42F);
-            this.xrIDVALUE.StylePriority.UseFont = false;
-            this.xrIDVALUE.StylePriority.UseTextAlignment = false;
-            this.xrIDVALUE.Text = "xrID";
-            this.xrIDVALUE.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            this.xrIdValue.Dpi = 254F;
+            this.xrIdValue.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Id]\n")});
+            this.xrIdValue.Font = new DevExpress.Drawing.DXFont("Times New Roman", 14F);
+            this.xrIdValue.LocationFloat = new DevExpress.Utils.PointFloat(898.3252F, 0F);
+            this.xrIdValue.Multiline = true;
+            this.xrIdValue.Name = "xrIdValue";
+            this.xrIdValue.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrIdValue.SizeF = new System.Drawing.SizeF(399.5209F, 58.42F);
+            this.xrIdValue.StylePriority.UseFont = false;
+            this.xrIdValue.StylePriority.UseTextAlignment = false;
+            this.xrIdValue.Text = "xrId";
+            this.xrIdValue.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
-            // xrCITY
+            // xrCity
             // 
-            this.xrCITY.Dpi = 254F;
-            this.xrCITY.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "iif(?roleNameParam == \'Admin\', \'\', \'City\')\n")});
-            this.xrCITY.Font = new DevExpress.Drawing.DXFont("Times New Roman", 13.59F);
-            this.xrCITY.LocationFloat = new DevExpress.Utils.PointFloat(491.1604F, 408.5283F);
-            this.xrCITY.Multiline = true;
-            this.xrCITY.Name = "xrCITY";
-            this.xrCITY.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.xrCITY.SizeF = new System.Drawing.SizeF(253.9999F, 58.42001F);
-            this.xrCITY.StylePriority.UseFont = false;
-            this.xrCITY.StylePriority.UseTextAlignment = false;
-            this.xrCITY.Text = "CITY";
-            this.xrCITY.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            this.xrCity.Dpi = 254F;
+            this.xrCity.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "\'City\'\n")});
+            this.xrCity.Font = new DevExpress.Drawing.DXFont("Times New Roman", 13.59F);
+            this.xrCity.LocationFloat = new DevExpress.Utils.PointFloat(491.1604F, 408.5283F);
+            this.xrCity.Multiline = true;
+            this.xrCity.Name = "xrCity";
+            this.xrCity.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrCity.SizeF = new System.Drawing.SizeF(253.9999F, 58.42001F);
+            this.xrCity.StylePriority.UseFont = false;
+            this.xrCity.StylePriority.UseTextAlignment = false;
+            this.xrCity.Text = "City";
+            this.xrCity.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
-            // xrAGE
+            // xrAge
             // 
-            this.xrAGE.Dpi = 254F;
-            this.xrAGE.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "iif(?roleNameParam == \'Accountant\', \'\', \'Age\')\n")});
-            this.xrAGE.Font = new DevExpress.Drawing.DXFont("Times New Roman", 13.59F);
-            this.xrAGE.LocationFloat = new DevExpress.Utils.PointFloat(502.9198F, 305.6349F);
-            this.xrAGE.Multiline = true;
-            this.xrAGE.Name = "xrAGE";
-            this.xrAGE.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.xrAGE.SizeF = new System.Drawing.SizeF(253.9999F, 58.42001F);
-            this.xrAGE.StylePriority.UseFont = false;
-            this.xrAGE.StylePriority.UseTextAlignment = false;
-            this.xrAGE.Text = "AGE";
-            this.xrAGE.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            this.xrAge.Dpi = 254F;
+            this.xrAge.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "\'Age\'\n")});
+            this.xrAge.Font = new DevExpress.Drawing.DXFont("Times New Roman", 13.59F);
+            this.xrAge.LocationFloat = new DevExpress.Utils.PointFloat(502.9198F, 305.6349F);
+            this.xrAge.Multiline = true;
+            this.xrAge.Name = "xrAge";
+            this.xrAge.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrAge.SizeF = new System.Drawing.SizeF(253.9999F, 58.42001F);
+            this.xrAge.StylePriority.UseFont = false;
+            this.xrAge.StylePriority.UseTextAlignment = false;
+            this.xrAge.Text = "Age";
+            this.xrAge.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
-            // xrEMAIL
+            // xrEmail
             // 
-            this.xrEMAIL.Dpi = 254F;
-            this.xrEMAIL.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "iif(?roleNameParam == \'Staff\', \'\', \'Email\')\n")});
-            this.xrEMAIL.Font = new DevExpress.Drawing.DXFont("Times New Roman", 13.59F);
-            this.xrEMAIL.LocationFloat = new DevExpress.Utils.PointFloat(502.9198F, 208.327F);
-            this.xrEMAIL.Multiline = true;
-            this.xrEMAIL.Name = "xrEMAIL";
-            this.xrEMAIL.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.xrEMAIL.SizeF = new System.Drawing.SizeF(253.9999F, 58.42001F);
-            this.xrEMAIL.StylePriority.UseFont = false;
-            this.xrEMAIL.StylePriority.UseTextAlignment = false;
-            this.xrEMAIL.Text = "EMAIL";
-            this.xrEMAIL.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            this.xrEmail.Dpi = 254F;
+            this.xrEmail.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "\'Email\'\n")});
+            this.xrEmail.Font = new DevExpress.Drawing.DXFont("Times New Roman", 13.59F);
+            this.xrEmail.LocationFloat = new DevExpress.Utils.PointFloat(502.9198F, 208.327F);
+            this.xrEmail.Multiline = true;
+            this.xrEmail.Name = "xrEmail";
+            this.xrEmail.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrEmail.SizeF = new System.Drawing.SizeF(253.9999F, 58.42001F);
+            this.xrEmail.StylePriority.UseFont = false;
+            this.xrEmail.StylePriority.UseTextAlignment = false;
+            this.xrEmail.Text = "Email";
+            this.xrEmail.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
             // xrName
             // 
             this.xrName.Dpi = 254F;
             this.xrName.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "iif(?roleNameParam == \'Nurse\', \'\', \'Name\')\n")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "\'Name\'\n")});
             this.xrName.Font = new DevExpress.Drawing.DXFont("Times New Roman", 13.59F);
             this.xrName.LocationFloat = new DevExpress.Utils.PointFloat(502.9198F, 102.87F);
             this.xrName.Multiline = true;
@@ -272,24 +272,24 @@
             this.xrName.SizeF = new System.Drawing.SizeF(253.9999F, 58.41998F);
             this.xrName.StylePriority.UseFont = false;
             this.xrName.StylePriority.UseTextAlignment = false;
-            this.xrName.Text = "NAME";
+            this.xrName.Text = "Name";
             this.xrName.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
-            // xrID
+            // xrId
             // 
-            this.xrID.Dpi = 254F;
-            this.xrID.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "iif(?roleNameParam == \'Doctor\', \'\', \'Id\')\n")});
-            this.xrID.Font = new DevExpress.Drawing.DXFont("Times New Roman", 13.59F);
-            this.xrID.LocationFloat = new DevExpress.Utils.PointFloat(502.9197F, 0F);
-            this.xrID.Multiline = true;
-            this.xrID.Name = "xrID";
-            this.xrID.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.xrID.SizeF = new System.Drawing.SizeF(253.9999F, 42.545F);
-            this.xrID.StylePriority.UseFont = false;
-            this.xrID.StylePriority.UseTextAlignment = false;
-            this.xrID.Text = "ID";
-            this.xrID.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            this.xrId.Dpi = 254F;
+            this.xrId.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "\'Id\'")});
+            this.xrId.Font = new DevExpress.Drawing.DXFont("Times New Roman", 13.59F);
+            this.xrId.LocationFloat = new DevExpress.Utils.PointFloat(502.9197F, 0F);
+            this.xrId.Multiline = true;
+            this.xrId.Name = "xrId";
+            this.xrId.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrId.SizeF = new System.Drawing.SizeF(253.9999F, 42.545F);
+            this.xrId.StylePriority.UseFont = false;
+            this.xrId.StylePriority.UseTextAlignment = false;
+            this.xrId.Text = "Id";
+            this.xrId.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
             // bottomMarginBand1
             // 
@@ -475,16 +475,16 @@
         private DevExpress.XtraReports.UI.BottomMarginBand bottomMarginBand1;
         private DevExpress.XtraReports.UI.ReportHeaderBand ReportHeader;
         private DevExpress.XtraReports.UI.PageHeaderBand PageHeader;
-        private DevExpress.XtraReports.UI.XRLabel xrCITY;
-        private DevExpress.XtraReports.UI.XRLabel xrAGE;
-        private DevExpress.XtraReports.UI.XRLabel xrEMAIL;
+        private DevExpress.XtraReports.UI.XRLabel xrCity;
+        private DevExpress.XtraReports.UI.XRLabel xrAge;
+        private DevExpress.XtraReports.UI.XRLabel xrEmail;
         private DevExpress.XtraReports.UI.XRLabel xrName;
-        private DevExpress.XtraReports.UI.XRLabel xrID;
-        private DevExpress.XtraReports.UI.XRLabel xrAGEVALUE;
-        private DevExpress.XtraReports.UI.XRLabel xrIDVALUE;
-        private DevExpress.XtraReports.UI.XRLabel xrNAMEVALUE;
-        private DevExpress.XtraReports.UI.XRLabel xrEMAILVALUE;
-        private DevExpress.XtraReports.UI.XRLabel xrCITYVALUE;
+        private DevExpress.XtraReports.UI.XRLabel xrId;
+        private DevExpress.XtraReports.UI.XRLabel xrAgeValue;
+        private DevExpress.XtraReports.UI.XRLabel xrIdValue;
+        private DevExpress.XtraReports.UI.XRLabel xrNameValue;
+        private DevExpress.XtraReports.UI.XRLabel xrEmailValue;
+        private DevExpress.XtraReports.UI.XRLabel xrCityValue;
         private DevExpress.XtraReports.UI.XRLabel xrLabel13;
         private DevExpress.XtraReports.UI.XRLabel xrLabel12;
         private DevExpress.XtraReports.UI.PageFooterBand PageFooter;
