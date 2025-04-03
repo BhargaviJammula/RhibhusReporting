@@ -1,16 +1,4 @@
-<p>Admin Report</p>
-<br>
-<div class="dropdown">
-    Please Select City: 
-    <select [(ngModel)]="selectedCity">
-        <option *ngFor="let city of cityNames" [value]="city">{{ city }}</option>
-    </select> &nbsp;&nbsp;
-    Please Select Role: 
-    <select [(ngModel)]="selectedrole">
-        <option *ngFor="let role of roleNames" [value]="role">{{ role }}</option>
-    </select> &nbsp;&nbsp;
-    <button (click)="submitParameter()"><span>Submit</span></button>
-</div>
+<p>Dynamic Json Report</p>
 <br>
 <dx-report-viewer [reportUrl]="reportUrl" height="800px">
     <dxrv-request-options [invokeAction]="invokeAction" [host]="hostUrl"></dxrv-request-options>

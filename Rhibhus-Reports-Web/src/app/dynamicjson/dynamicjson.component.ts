@@ -23,17 +23,12 @@ import { environment } from '../../environments/environment';
   ]
 })
 export class DynamicjsonComponent  {
-  cityNames: string[] = ["Bangalore", "Mandya", "Horanadu", "Sringeri", "Mysore"];
-  roleNames: string[] = ["Doctor", "Nurse", "Staff", "Accountant", "Admin"];
   title = 'DXReportViewerSample';
-  selectedCity: string = "";
-  selectedrole: string = "";
   reportUrl: string = 'DynamicJsonReport';
   hostUrl: string = environment.baseUrl;
   invokeAction: string = environment.adminRoutePath;
 
   submitParameter() {
-    this.reportUrl = `DynamicJsonReport?cityNameParam=${this.selectedCity}&roleNameParam=${this.selectedrole}`;
-}
-
+      this.reportUrl = `DynamicJsonReport`;
+  }
 }

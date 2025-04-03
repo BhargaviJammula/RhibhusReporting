@@ -10,7 +10,7 @@ namespace Rhibhus.Reports.API.PredefinedReports
         protected void SetLanguageForReport(string countryNameParam)
         {
             var languageData = new LanguageService().ReadJsonFromFile(countryNameParam);
-
+            var totalControls = 0;
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
 
@@ -50,6 +50,7 @@ namespace Rhibhus.Reports.API.PredefinedReports
                     {
                         // Set the text of the header cell
                         control.Text = value;
+                        totalControls++;
                     }
                 }
             }
@@ -58,7 +59,7 @@ namespace Rhibhus.Reports.API.PredefinedReports
 
             TimeSpan elapsed = stopwatch.Elapsed;
             Console.WriteLine("Elapsed Time: " + elapsed);
-            Console.WriteLine($"Elapsed Time in milliseconds: {elapsed.TotalMilliseconds}");
+            Console.WriteLine($"Elapsed Time in milliseconds: {elapsed.TotalMilliseconds}, Total Controls: {totalControls}");
         }
     }
 }

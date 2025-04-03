@@ -1,6 +1,8 @@
-﻿using System;
+﻿using DevExpress.XtraReports.UI;
+using System;
+using System.Collections;
+using System.ComponentModel;
 using System.Drawing;
-using DevExpress.XtraReports.UI;
 
 namespace Rhibhus.Reports.API.PredefinedReports
 {
@@ -18,10 +20,10 @@ namespace Rhibhus.Reports.API.PredefinedReports
             {
                 Text = "Hi",
                 // Position in the report
-               
             };
 
             this.Bands[BandKind.Detail].Controls.Add(label);
         }
+
     }
 }
