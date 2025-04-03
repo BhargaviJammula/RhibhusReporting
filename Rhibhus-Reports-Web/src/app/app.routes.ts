@@ -7,6 +7,7 @@ import { SignatureComponent } from './signature/signature.component';
 import { TocComponent } from './toc/toc.component';
 import { JsonComponent } from './json/json.component';
 import { EmployeedetailsComponent  } from './employeedetails/employeedetails.component';
+import { DynamicjsonComponent  } from './dynamicjson/dynamicjson.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: '/admin', pathMatch: 'full' },
@@ -17,4 +18,5 @@ export const routes: Routes = [
     { path: 'toc', component: TocComponent  },
     { path: 'json', component: JsonComponent  },
     { path: 'employeedetails', component: EmployeedetailsComponent },
+    { path: 'dynamicjson', component: DynamicjsonComponent },
   ];
