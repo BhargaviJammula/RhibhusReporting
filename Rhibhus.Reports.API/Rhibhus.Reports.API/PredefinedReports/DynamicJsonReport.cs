@@ -24,6 +24,8 @@ namespace Rhibhus.Reports.API.PredefinedReports
         {
             string jsonUrl = "https://rhibhhus-ca.s3.ap-south-1.amazonaws.com/employees.json";
 
+            // string jsonUrl = await GetFilePath("1");
+
             string jsonData = await GetJsonFromUrlAsync(jsonUrl);
 
             // Create JSON Data Source
@@ -37,6 +39,29 @@ namespace Rhibhus.Reports.API.PredefinedReports
             this.DataSource = jsonDataSource;
         }
 
+        private async Task<string> GetFilePath(string fileType)
+        {
+            using HttpClient client = new HttpClient();
+            client.BaseAddress = new Uri("http://localhost:6001"); // Express.js API base URL
+
+            HttpResponseMessage response = await client.GetAsync($"/get-file/{fileType}");
+
+            if (response.IsSuccessStatusCode)
+            {
+                var result = await response.Content.ReadFromJsonAsync<FileResponse>();
+                Console.WriteLine($"File Type: {result?.FileType}");
+                Console.WriteLine($"File URL: {result?.Url}");
+                return result?.Url ?? string.Empty;
+            }
+            else
+            {
+                Console.WriteLine($"Error: {response.StatusCode}");
+                string errorMessage = await response.Content.ReadAsStringAsync();
+                Console.WriteLine($"Message: {errorMessage}");
+                return errorMessage;
+            }
+        }
+
         // Fetch JSON Data from S3 or API
         private static async Task<string> GetJsonFromUrlAsync(string url)
         {
@@ -45,5 +70,11 @@ namespace Rhibhus.Reports.API.PredefinedReports
                 return await client.GetStringAsync(url);
             }
         }
+    }
+
+    class FileResponse
+    {
+        public string? FileType { get; set; }
+        public string? Url { get; set; }
     }
 }
