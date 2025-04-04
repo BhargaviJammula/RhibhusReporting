@@ -1,5 +1,13 @@
 <p>Dynamic Json Report</p>
 <br>
+<div class="dropdown">
+    Please Select File Type:
+    <select [(ngModel)]="selectedFileType">
+        <option *ngFor="let fileType of fileTypes" [value]="fileType">{{ fileType }}</option>
+    </select> &nbsp;&nbsp;
+    <button (click)="submitParameter()"><span>Submit</span></button>
+</div>
+<br>
 <dx-report-viewer [reportUrl]="reportUrl" height="800px">
     <dxrv-request-options [invokeAction]="invokeAction" [host]="hostUrl"></dxrv-request-options>
 </dx-report-viewer>

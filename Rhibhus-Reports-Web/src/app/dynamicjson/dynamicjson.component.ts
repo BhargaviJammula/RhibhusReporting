@@ -22,13 +22,20 @@ import { environment } from '../../environments/environment';
     "../../../node_modules/devexpress-reporting/dist/css/dx-webdocumentviewer.css"
   ]
 })
-export class DynamicjsonComponent  {
+export class DynamicjsonComponent {
   title = 'DXReportViewerSample';
+  fileTypes: string[] = ["Employee - 6 MB", "Employee - 13 MB", "Employee - 19 MB"];
+  selectedFileType: string = "";
   reportUrl: string = 'DynamicJsonReport';
   hostUrl: string = environment.baseUrl;
   invokeAction: string = environment.adminRoutePath;
 
+  getFileTypeValue(fileType: string): number {
+    const index = this.fileTypes.indexOf(fileType);
+    return index !== -1 ? index + 1 : -1; // Returns -1 if fileType is not found
+  }
+
   submitParameter() {
-      this.reportUrl = `DynamicJsonReport`;
+    this.reportUrl = `DynamicJsonReport?fileTypeParam=${this.getFileTypeValue(this.selectedFileType)}`;
   }
 }

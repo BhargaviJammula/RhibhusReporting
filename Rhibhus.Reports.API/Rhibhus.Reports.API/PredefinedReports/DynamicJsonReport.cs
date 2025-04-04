@@ -24,7 +24,9 @@ namespace Rhibhus.Reports.API.PredefinedReports
         {
             string jsonUrl = "https://rhibhhus-ca.s3.ap-south-1.amazonaws.com/employees.json";
 
-            // string jsonUrl = await GetFilePath("1");
+            var fileTypeParam = this.Parameters["fileTypeParam"]?.Value?.ToString() ?? "0";
+
+            // string jsonUrl = await GetFilePath(fileTypeParam);
 
             string jsonData = await GetJsonFromUrlAsync(jsonUrl);
 
