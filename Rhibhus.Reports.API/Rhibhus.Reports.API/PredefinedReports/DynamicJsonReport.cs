@@ -22,11 +22,11 @@ namespace Rhibhus.Reports.API.PredefinedReports
 
         private async Task BindJsonData()
         {
-            string jsonUrl = "https://rhibhhus-ca.s3.ap-south-1.amazonaws.com/employees.json";
+            // string jsonUrl = "https://rhibhhus-ca.s3.ap-south-1.amazonaws.com/employees.json";
 
             var fileTypeParam = this.Parameters["fileTypeParam"]?.Value?.ToString() ?? "0";
 
-            // string jsonUrl = await GetFilePath(fileTypeParam);
+            string jsonUrl = await GetFilePath(fileTypeParam);
 
             string jsonData = await GetJsonFromUrlAsync(jsonUrl);
 
