@@ -1,5 +1,5 @@
 export const environment = {
-    baseUrl: 'http://localhost:5000/',
+    baseUrl: 'http://api:5000/',
     adminRoutePath: 'Admin',
     userRoutePath: 'User'
 }
