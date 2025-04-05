@@ -26,15 +26,15 @@ builder.Services.ConfigureReportingServices(configurator =>
     configurator.ConfigureWebDocumentViewer(viewerConfigurator =>
     {
         viewerConfigurator.UseCachedReportSourceBuilder();
-        viewerConfigurator.RegisterConnectionProviderFactory<CustomSqlDataConnectionProviderFactory>();
+        //viewerConfigurator.RegisterConnectionProviderFactory<CustomSqlDataConnectionProviderFactory>();
     });
 });
 
 ServiceRegistrator.AddCommonServices(builder.Services, builder.Environment.ContentRootPath);
 
 builder.Services.AddScoped<ReportStorageWebExtension, CustomReportStorageWebExtension>();
-builder.Services.AddSingleton<IScopedDbContextProvider<ReportDbContext>, ScopedDbContextProvider<ReportDbContext>>();
-builder.Services.AddSingleton<IScopedDbContextProvider<EmployeeDbContext>, ScopedDbContextProvider<EmployeeDbContext>>();
+//builder.Services.AddSingleton<IScopedDbContextProvider<ReportDbContext>, ScopedDbContextProvider<ReportDbContext>>();
+//builder.Services.AddSingleton<IScopedDbContextProvider<EmployeeDbContext>, ScopedDbContextProvider<EmployeeDbContext>>();
 builder.Services.AddTransient<EmployeeRepository>();
 builder.Services.AddTransient<LanguageService>();
 builder.Services.AddLocalization();
@@ -52,9 +52,9 @@ builder.Services.Configure<RequestLocalizationOptions>(
 
 DeserializationSettings.RegisterTrustedClass(typeof(EmployeeRepository));
 
-builder.Services.AddDbContext<ReportDbContext>(options => options.UseSqlite(builder.Configuration.GetConnectionString("ReportsDataConnectionString")));
+//builder.Services.AddDbContext<ReportDbContext>(options => options.UseSqlite(builder.Configuration.GetConnectionString("ReportsDataConnectionString")));
 
-builder.Services.AddDbContext<EmployeeDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultMSSqlConnection")));
+//builder.Services.AddDbContext<EmployeeDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultMSSqlConnection")));
 
 builder.Services.AddCors(options =>
 {
@@ -73,12 +73,12 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-DatabaseInitilaizer.Seed(app);
-using (var scope = app.Services.CreateScope())
-{
-    var services = scope.ServiceProvider;
-    services.GetService<ReportDbContext>().InitializeDatabase();
-}
+//DatabaseInitilaizer.Seed(app);
+//using (var scope = app.Services.CreateScope())
+//{
+//    var services = scope.ServiceProvider;
+//    services.GetService<ReportDbContext>().InitializeDatabase();
+//}
 var contentDirectoryAllowRule = DirectoryAccessRule.Allow(new DirectoryInfo(Path.Combine(builder.Environment.ContentRootPath, "Content")).FullName);
 AccessSettings.ReportingSpecificResources.TrySetRules(contentDirectoryAllowRule, UrlAccessRule.Allow());
 app.UseDevExpressControls();
@@ -92,7 +92,7 @@ if (app.Environment.IsDevelopment())
 var localizeOptions = app.Services.GetService<IOptions<RequestLocalizationOptions>>();
 app.UseRequestLocalization(localizeOptions.Value);
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 app.UseCors("AllowCorsPolicy");
 
 app.UseAuthorization();

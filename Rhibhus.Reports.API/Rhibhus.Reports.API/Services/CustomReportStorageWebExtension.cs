@@ -7,10 +7,10 @@ namespace Rhibhus.Reports.API.Services
 {
     public class CustomReportStorageWebExtension : DevExpress.XtraReports.Web.Extensions.ReportStorageWebExtension
     {
-        protected ReportDbContext DbContext { get; set; }
-        public CustomReportStorageWebExtension(ReportDbContext dbContext)
+        //protected ReportDbContext DbContext { get; set; }
+        public CustomReportStorageWebExtension()
         {
-            this.DbContext = dbContext;
+            //this.DbContext = dbContext;
         }
 
         public override bool CanSetData(string url)
@@ -92,33 +92,32 @@ namespace Rhibhus.Reports.API.Services
             return ms.ToArray();
         }
 
-        public override Dictionary<string, string> GetUrls()
-        {
-            // Returns a dictionary that contains the report names (URLs) and display names. 
-            // The Report Designer uses this method to populate the Open Report and Save Report dialogs.
+        //public override Dictionary<string, string> GetUrls()
+        //{
+        //    // Returns a dictionary that contains the report names (URLs) and display names. 
+        //    // The Report Designer uses this method to populate the Open Report and Save Report dialogs.
 
-            return DbContext.Reports
-                .ToList()
-                .Select(x => x.Name)
-                .Union(ReportsFactory.Reports.Select(x => x.Key))
-                .ToDictionary<string, string>(x => x);
-        }
-
+        //    //return DbContext.Reports
+        //    //    .ToList()
+        //    //    .Select(x => x.Name)
+        //    //    .Union(ReportsFactory.Reports.Select(x => x.Key))
+        //    //    .ToDictionary<string, string>(x => x);
+        //}
         public override void SetData(XtraReport report, string url)
         {
-            // Saves the specified report to the report storage with the specified name
-            // (saves existing reports only). 
-            using var stream = new MemoryStream(); report.SaveLayoutToXml(stream);
-            var reportData = DbContext.Reports.FirstOrDefault(x => x.Name == url);
-            if (reportData == null)
-            {
-                DbContext.Reports.Add(new ReportItem { Name = url, LayoutData = stream.ToArray() });
-            }
-            else
-            {
-                reportData.LayoutData = stream.ToArray();
-            }
-            DbContext.SaveChanges();
+            //// Saves the specified report to the report storage with the specified name
+            //// (saves existing reports only). 
+            //using var stream = new MemoryStream(); report.SaveLayoutToXml(stream);
+            //var reportData = DbContext.Reports.FirstOrDefault(x => x.Name == url);
+            //if (reportData == null)
+            //{
+            //    DbContext.Reports.Add(new ReportItem { Name = url, LayoutData = stream.ToArray() });
+            //}
+            //else
+            //{
+            //    reportData.LayoutData = stream.ToArray();
+            //}
+            //DbContext.SaveChanges();
         }
 
         public override string SetNewData(XtraReport report, string defaultUrl)

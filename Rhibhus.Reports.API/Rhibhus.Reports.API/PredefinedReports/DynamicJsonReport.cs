@@ -44,7 +44,7 @@ namespace Rhibhus.Reports.API.PredefinedReports
         private async Task<string> GetFilePath(string fileType)
         {
             using HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri("http://localhost:6001"); // Express.js API base URL
+            client.BaseAddress = new Uri("http://fileapi:6001"); // Express.js API base URL
 
             HttpResponseMessage response = await client.GetAsync($"/get-file/{fileType}");
 
