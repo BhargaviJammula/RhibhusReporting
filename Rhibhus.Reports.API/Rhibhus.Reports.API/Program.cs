@@ -61,7 +61,8 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowCorsPolicy", builder =>
     {
         // Allow all ports on local host.
-        builder.SetIsOriginAllowed(origin => new Uri(origin).Host == "localhost");
+        //builder.SetIsOriginAllowed(origin => new Uri(origin).Host == "localhost");
+        builder.WithOrigins("*");
         builder.AllowAnyHeader();
         builder.AllowAnyMethod();
     });
