@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: ./Rhibhus-Reports-Web
+    container_name: rhibhus-web
+    ports:
+      - "80:80"
+    depends_on:
+      - api
+      - fileapi
+    networks:
+      - rhibhus-network
+
+  api:
+    build:
+      context: ./Rhibhus.Reports.API
+    container_name: rhibhus-api
+    ports:
+      - "5000:5000"
+    networks:
+      - rhibhus-network
+
+  fileapi:
+    build:
+      context: ./report-file-api
+    container_name: rhibhus-file-api
+    ports:
+      - "6001:6001"
+    networks:
+      - rhibhus-network
+
+networks:
+  rhibhus-network:
+    driver: bridge
