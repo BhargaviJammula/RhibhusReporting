@@ -1,0 +1,32 @@
+# Step 1: Build the Angular app
+FROM node:18-alpine AS builder
+
+# Set working directory
+WORKDIR /app
+
+# Copy package.json and install dependencies
+COPY package*.json ./
+RUN npm install
+
+# Copy the rest of the app source code
+COPY . .
+
+# Build the Angular app
+# RUN npm run build --prod
+# RUN npm start
+
+## Step 2: Serve the app with Nginx
+#FROM nginx:alpine
+
+## Copy the build output to Nginx's html directory
+#COPY --from=builder /app/dist/Rhibhus-Reports-Web/browser /usr/share/nginx/html
+#RUN ls -la /usr/share/nginx/html
+
+## Copy custom nginx config (optional)
+## COPY nginx.conf /etc/nginx/nginx.conf
+
+## Expose port 80
+EXPOSE 4200
+
+# Start Nginx server
+CMD ["npm", "start"]
